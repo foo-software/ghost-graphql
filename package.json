@@ -1,0 +1,23 @@
+{
+  "name": "root",
+  "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "scripts": {
+    "prettier:all": "prettier --single-quote --write '*.{js,jsx,ts,tsx,json,css,scss,md}'"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --single-quote --write"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lerna": "^3.18.2",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  }
+}

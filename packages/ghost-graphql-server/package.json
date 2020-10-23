@@ -1,0 +1,38 @@
+{
+  "name": "@foo-software/ghost-graphql-server",
+  "version": "0.1.0",
+  "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
+  "description": "A Ghost GraphQL server",
+  "main": "dist/src/index.js",
+  "keywords": [
+    "ghost",
+    "blog",
+    "graphql",
+    "apollo",
+    "typescript",
+    "server"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dev": "NODE_ENV=development ts-node-dev --respawn --inspect -- ./src/index.ts | bunyan --color",
+    "prepare": "npm run clean && npm run build",
+    "start": "npm run build && node dist | bunyan --color"
+  },
+  "dependencies": {
+    "@types/camelcase-keys": "^5.1.1",
+    "apollo-datasource-rest": "^0.9.4",
+    "apollo-server": "^2.18.2",
+    "camelcase-keys": "^6.2.2",
+    "graphql": "^15.3.0"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "@types/graphql-type-json": "^0.3.2",
+    "@types/node": "^14.14.2",
+    "bunyan": "^1.8.14",
+    "rimraf": "^3.0.2",
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.0.3"
+  }
+}
