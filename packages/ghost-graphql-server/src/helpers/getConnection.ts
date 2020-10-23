@@ -1,11 +1,11 @@
 import camelcaseKeys from 'camelcase-keys';
-import Meta from '../interfaces/Meta';
+import MetaInterface from '../interfaces/Meta';
 
 export default ({
   meta,
   nodes,
 }: {
-  meta: Meta;
+  meta: MetaInterface;
   nodes: any[];
 }) => {
   return {

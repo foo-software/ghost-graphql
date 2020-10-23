@@ -1,7 +1,8 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
 import { API_URL } from '../constants';
-import ApiArguments from '../interfaces/ApiArguments';
-import getApiArguments from '../helpers/getApiArguments';
+import BrowseArgumentsInterface from '../interfaces/BrowseArguments';
+import getBrowseArguments from '../helpers/getBrowseArguments';
+import ReadArgumentsInterface from '../interfaces/ReadArguments';
 
 export default class PostsAPI extends RESTDataSource {
   constructor() {
@@ -9,12 +10,16 @@ export default class PostsAPI extends RESTDataSource {
     this.baseURL = `${API_URL}/posts`;
   }
 
-  browse(apiArguments: ApiArguments) {
+  browse(browseArguments: BrowseArgumentsInterface) {
     return this.get(
       `${this.baseURL}`,
       {
-        ...getApiArguments(apiArguments),
+        ...getBrowseArguments(browseArguments),
       },
     );
+  }
+
+  read({ id, slug }: ReadArgumentsInterface) {
+    return this.get(`${this.baseURL}/${id || `slug/${slug}`}`);
   }
 }

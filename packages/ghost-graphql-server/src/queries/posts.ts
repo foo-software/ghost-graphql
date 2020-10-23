@@ -1,15 +1,15 @@
 import { PostsConnection } from '../types/Post';
-import apiArguments from '../types/apiArguments';
-import ApiArguments from '../interfaces/ApiArguments';
+import browseArgumentsTypes from '../types/browseArguments';
+import BrowseArgumentsInterface from '../interfaces/BrowseArguments';
 import getConnection from '../helpers/getConnection';
 import ResolverContextInterface from '../interfaces/DataSources';
 
 export default {
   type: PostsConnection,
-  args: apiArguments,
+  args: browseArgumentsTypes,
   resolve: async (
     _: any,
-    args: ApiArguments,
+    args: BrowseArgumentsInterface,
     { dataSources }: ResolverContextInterface
   ) => {
     const response = await dataSources.postsAPI.browse(args);

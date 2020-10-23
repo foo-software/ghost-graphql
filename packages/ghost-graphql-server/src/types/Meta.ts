@@ -2,7 +2,6 @@ import { GraphQLInt, GraphQLObjectType } from 'graphql';
 
 const Pagination = new GraphQLObjectType({
   name: 'Pagination',
-
   fields: () => ({
     limit: { type: GraphQLInt },
     next: { type: GraphQLInt },

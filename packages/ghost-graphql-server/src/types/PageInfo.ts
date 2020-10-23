@@ -3,7 +3,6 @@ import { GraphQLNonNull, GraphQLBoolean, GraphQLObjectType } from 'graphql';
 // https://relay.dev/graphql/connections.htm#sec-undefined.PageInfo
 export default new GraphQLObjectType({
   name: 'PageInfo',
-
   fields: () => ({
     // unfortunately we can't follow the spec strictly based on the data we get back
     // endCursor: { type: new GraphQLNonNull(GraphQLString) },
