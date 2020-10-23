@@ -1,7 +1,7 @@
 import { PostsConnection } from '../types/Post';
-import getConnection from '../helpers/getConnection';
 import apiArguments from '../types/apiArguments';
 import ApiArguments from '../interfaces/ApiArguments';
+import getConnection from '../helpers/getConnection';
 import ResolverContextInterface from '../interfaces/DataSources';
 
 export default {
