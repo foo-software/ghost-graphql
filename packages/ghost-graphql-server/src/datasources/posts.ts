@@ -19,7 +19,7 @@ export default class PostsAPI extends RESTDataSource {
     );
   }
 
-  read({ id, slug }: ReadArgumentsInterface) {
-    return this.get(`${this.baseURL}/${id || `slug/${slug}`}`);
+  read({ id, key, slug }: ReadArgumentsInterface) {
+    return this.get(`${this.baseURL}/${id || `slug/${slug}`}`, { key });
   }
 }
