@@ -22,7 +22,7 @@ const Tag = new GraphQLObjectType({
     ogImage: { type: GraphQLString },
     ogTitle: { type: GraphQLString },
     slug: { type: GraphQLString },
-    twitter_description: { type: GraphQLString },
+    twitterDescription: { type: GraphQLString },
     twitterImage: { type: GraphQLString },
     twitterTitle: { type: GraphQLString },
     url: { type: GraphQLString },

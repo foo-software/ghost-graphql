@@ -7,9 +7,11 @@ import ResolverContextInterface from '../interfaces/DataSources';
 export default ({
   type,
   dataSource,
+  resource,
 }: {
-  type: any;
   dataSource: DataSourceKeyType;
+  type: any;
+  resource: string;
 }) => ({
   type,
   args: browseArgumentsTypes,
@@ -20,7 +22,7 @@ export default ({
   ) => {
     const response = await dataSources[dataSource].browse(args);
 
-    const { meta, posts: nodes } = response || {};
+    const { meta, [resource]: nodes } = response || {};
 
     if (!nodes || !nodes.length) {
       return null;
