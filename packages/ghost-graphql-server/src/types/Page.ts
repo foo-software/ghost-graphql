@@ -7,8 +7,8 @@ import {
 } from 'graphql';
 import getConnection from './getConnection';
 
-const Post = new GraphQLObjectType({
-  name: 'Post',
+const Page = new GraphQLObjectType({
+  name: 'Page',
   fields: () => ({
     access: { type: GraphQLBoolean },
     canonicalUrl: { type: GraphQLString },
@@ -27,7 +27,7 @@ const Post = new GraphQLObjectType({
     ogDescription: { type: GraphQLString },
     ogImage: { type: GraphQLString },
     ogTitle: { type: GraphQLString },
-    page: { type: GraphQLBoolean, defaultValue: false },
+    page: { type: GraphQLBoolean },
     publishedAt: { type: GraphQLString },
     readingTime: { type: GraphQLInt },
     sendEmailWhenPublished: { type: GraphQLBoolean },
@@ -43,9 +43,9 @@ const Post = new GraphQLObjectType({
   }),
 });
 
-export const PostsConnection = getConnection({
-  name: 'Posts',
-  nodeType: Post,
+export const PagesConnection = getConnection({
+  name: 'Pages',
+  nodeType: Page,
 });
 
-export default Post;
+export default Page;

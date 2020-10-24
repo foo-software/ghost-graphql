@@ -1,6 +1,4 @@
-import AuthenticationArguments from './AuthenticationArguments';
-
-export default interface ReadArguments extends AuthenticationArguments {
+export default interface ReadArguments {
   id?: string;
   slug?: string;
 }

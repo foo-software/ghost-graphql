@@ -1,11 +1,17 @@
 import { UserInputError } from 'apollo-server';
-import Post from '../types/Post';
+import DataSourceKeyType from '../types/DataSourceKey';
 import readArgumentsTypes from '../types/readArguments';
 import ReadArgumentsInterface from '../interfaces/ReadArguments';
 import ResolverContextInterface from '../interfaces/DataSources';
 
-export default {
-  type: Post,
+export default ({
+  type,
+  dataSource,
+}: {
+  type: any;
+  dataSource: DataSourceKeyType;
+}) => ({
+  type,
   args: readArgumentsTypes,
   resolve: async (
     _: any,
@@ -16,7 +22,7 @@ export default {
       return new UserInputError('either an id or slug needs to be provided');
     }
 
-    const response = await dataSources.postsAPI.read(args);
+    const response = await dataSources[dataSource].read(args);
 
     const { posts } = response || {};
 
@@ -26,4 +32,4 @@ export default {
 
     return posts[0];
   },
-};
+});

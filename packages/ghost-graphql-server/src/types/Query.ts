@@ -1,12 +1,14 @@
 import { GraphQLObjectType } from 'graphql';
-import post from '../queries/post';
-import posts from '../queries/posts';
+import PostType, { PostsConnection as PostsConnectionType } from '../types/Post';
+import DataSourceKeyType from '../types/DataSourceKey';
+import resource from '../queries/resource';
+import resources from '../queries/resources';
 
 export default new GraphQLObjectType({
   name: 'Query',
   fields: () => ({
-    post,
-    posts,
+    post: resource({ dataSource: DataSourceKeyType.postsAPI, type: PostType, }),
+    posts: resources({ dataSource: DataSourceKeyType.postsAPI, type: PostsConnectionType }),
   }),
 });
 

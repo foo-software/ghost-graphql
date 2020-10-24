@@ -1,9 +1,9 @@
 import { API_URL } from '../constants';
 import ResourceApi from './resource';
 
-export default class PostsAPI extends ResourceApi {
+export default class PagesAPI extends ResourceApi {
   constructor() {
     super();
-    this.baseURL = `${API_URL}/posts`;
+    this.baseURL = `${API_URL}/pages`;
   }
 }

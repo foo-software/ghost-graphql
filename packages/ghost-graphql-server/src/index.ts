@@ -1,7 +1,7 @@
 import { ApolloServer } from 'apollo-server';
+import dataSources from './datasources';
 import npmPackage from '../package.json';
 import schema from './schema';
-import dataSources from './datasources';
 
 const server = new ApolloServer({
   schema,

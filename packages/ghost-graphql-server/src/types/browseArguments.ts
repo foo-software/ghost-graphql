@@ -5,7 +5,6 @@ import {
   GraphQLList,
   GraphQLString,
 } from 'graphql';
-import authenticationArguments from './authenticationArguments';
 
 const Format = new GraphQLEnumType({
   name: 'Format',
@@ -16,7 +15,6 @@ const Format = new GraphQLEnumType({
 });
 
 export default {
-  ...authenticationArguments,
   fields: { type: new GraphQLList(GraphQLString) },
   filter: { type: new GraphQLList(GraphQLString) },
   formats: { type: new GraphQLList(Format) },
