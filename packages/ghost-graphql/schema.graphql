@@ -1,0 +1,245 @@
+type Query {
+  author(id: String, slug: String): Author
+  authors(
+    fields: [String]
+    filter: [String]
+    formats: [Format]
+    include: [String]
+    limit: Int
+    order: String
+    page: Int
+  ): AuthorsConnection
+  page(id: String, slug: String): Page
+  pages(
+    fields: [String]
+    filter: [String]
+    formats: [Format]
+    include: [String]
+    limit: Int
+    order: String
+    page: Int
+  ): PagesConnection
+  post(id: String, slug: String): Post
+  posts(
+    fields: [String]
+    filter: [String]
+    formats: [Format]
+    include: [String]
+    limit: Int
+    order: String
+    page: Int
+  ): PostsConnection
+  settings: Settings
+  tag(id: String, slug: String): Tag
+  tags(
+    fields: [String]
+    filter: [String]
+    formats: [Format]
+    include: [String]
+    limit: Int
+    order: String
+    page: Int
+  ): TagsConnection
+}
+
+type Author {
+  bio: String
+  coverImage: String
+  facebook: String
+  id: String!
+  location: String
+  metaDescription: String
+  metaTitle: String
+  name: String
+  profileImage: String
+  slug: String
+  twitter: String
+  url: String
+  website: String
+}
+
+type AuthorsConnection {
+  edges: [AuthorsEdge]
+  meta: Meta
+  pageInfo: PageInfo!
+}
+
+type AuthorsEdge {
+  cursor: String
+  node: Author
+}
+
+type Meta {
+  pagination: Pagination
+}
+
+type Pagination {
+  limit: Int
+  next: Int
+  page: Int
+  pages: Int
+  prev: Int
+  total: Int
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+}
+
+enum Format {
+  html
+  plaintext
+}
+
+type Page {
+  access: Boolean
+  canonicalUrl: String
+  codeinjectionFoot: String
+  codeinjectionHead: String
+  commentId: String
+  createdAt: String
+  customExcerpt: String
+  customTemplate: String
+  emailSubject: String
+  excerpt: String
+  featureImage: String
+  id: String!
+  metaDescription: String
+  metaTitle: String
+  ogDescription: String
+  ogImage: String
+  ogTitle: String
+  page: Boolean
+  publishedAt: String
+  readingTime: Int
+  sendEmailWhenPublished: Boolean
+  slug: String
+  title: String
+  twitterDescription: String
+  twitterImage: String
+  twitterTitle: String
+  updatedAt: String
+  url: String
+  uuid: String
+  visibility: String
+}
+
+type PagesConnection {
+  edges: [PagesEdge]
+  meta: Meta
+  pageInfo: PageInfo!
+}
+
+type PagesEdge {
+  cursor: String
+  node: Page
+}
+
+type Post {
+  access: Boolean
+  canonicalUrl: String
+  codeinjectionFoot: String
+  codeinjectionHead: String
+  commentId: String
+  createdAt: String
+  customExcerpt: String
+  customTemplate: String
+  emailSubject: String
+  excerpt: String
+  featureImage: String
+  id: String!
+  metaDescription: String
+  metaTitle: String
+  ogDescription: String
+  ogImage: String
+  ogTitle: String
+  page: Boolean
+  publishedAt: String
+  readingTime: Int
+  sendEmailWhenPublished: Boolean
+  slug: String
+  title: String
+  twitterDescription: String
+  twitterImage: String
+  twitterTitle: String
+  updatedAt: String
+  url: String
+  uuid: String
+  visibility: String
+}
+
+type PostsConnection {
+  edges: [PostsEdge]
+  meta: Meta
+  pageInfo: PageInfo!
+}
+
+type PostsEdge {
+  cursor: String
+  node: Post
+}
+
+type Settings {
+  codeinjectionFoot: String
+  codeinjectionHead: String
+  coverImage: String
+  description: String
+  facebook: String
+  icon: String
+  lang: String
+  logo: String
+  membersSupportAddress: String
+  metaDescription: String
+  metaTitle: String
+  navigation: [Navigation]
+  ogDescription: String
+  ogImage: String
+  ogTitle: String
+  secondaryNavigation: [Navigation]
+  timezone: String
+  title: String
+  twitter: String
+  twitterDescription: String
+  twitterImage: String
+  twitterTitle: String
+  url: String
+}
+
+type Navigation {
+  label: String
+  url: String
+}
+
+type Tag {
+  accentColor: String
+  canonicalUrl: String
+  codeinjectionFoot: String
+  codeinjectionHead: String
+  description: String
+  featureImage: String
+  id: String!
+  metaDescription: String
+  metaTitle: String
+  name: String
+  ogDescription: String
+  ogImage: String
+  ogTitle: String
+  slug: String
+  twitterDescription: String
+  twitterImage: String
+  twitterTitle: String
+  url: String
+  visibility: String
+}
+
+type TagsConnection {
+  edges: [TagsEdge]
+  meta: Meta
+  pageInfo: PageInfo!
+}
+
+type TagsEdge {
+  cursor: String
+  node: Tag
+}
