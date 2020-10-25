@@ -1,4 +1,5 @@
 import { GraphQLInt, GraphQLList, GraphQLString } from 'graphql';
+import { API_VERSION } from '../constants';
 import BrowseArgumentsInterface from '../interfaces/BrowseArguments';
 import DataSourceKeyType from '../types/DataSourceKey';
 import FormatType from '../types/Format';
@@ -15,6 +16,7 @@ export default ({
   resource: string;
 }) => ({
   type,
+  description: `https://ghost.org/docs/api/${API_VERSION}/content/#${resource}`,
   args: {
     // https://ghost.org/docs/api/v3/content/#parameters
     fields: { type: new GraphQLList(GraphQLString) },

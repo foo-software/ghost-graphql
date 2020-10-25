@@ -1,4 +1,5 @@
 import { GraphQLString } from 'graphql';
+import { API_VERSION } from '../constants';
 import { UserInputError } from 'apollo-server';
 import camelcaseKeys from 'camelcase-keys';
 import DataSourceKeyType from '../types/DataSourceKey';
@@ -17,6 +18,7 @@ export default ({
   resource: string;
 }) => ({
   type,
+  description: `https://ghost.org/docs/api/${API_VERSION}/content/#${resource}`,
   args: {
     id: { type: GraphQLString },
     slug: { type: GraphQLString },
