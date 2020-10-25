@@ -37,18 +37,18 @@ Resources with pagination respond with a payload of [edges](https://graphql.org/
     <td>--</td>
   </tr>
   <tr>
-    <td><code>GHOST_API_VERSION</code></td>
-    <td>The version of Ghost API as documented <a href="https://ghost.org/docs/api/v3/content/#path--version">here</a>.</td>
-    <td><code>enum { v3 = 'v3' }</code>(only support for v3 at this time)</td>
-    <td>no</td>
-    <td><code>v3</code></td>
-  </tr>
-  <tr>
     <td><code>GHOST_API_URL</code></td>
     <td>A Ghost admin URL as documented <a href="https://ghost.org/docs/api/v3/content/#url">here</a>. Don't use a trailing slash.</td>
     <td>string</td>
     <td>yes</td>
     <td>--</td>
+  </tr>
+  <tr>
+    <td><code>GHOST_API_VERSION</code></td>
+    <td>The version of Ghost API as documented <a href="https://ghost.org/docs/api/v3/content/#path--version">here</a>.</td>
+    <td><code>enum { v3 = 'v3' }</code>(only support for v3 at this time)</td>
+    <td>no</td>
+    <td><code>v3</code></td>
   </tr>
 </table>
 
