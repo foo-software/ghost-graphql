@@ -22,13 +22,11 @@ _If you're looking to import resolvers or other pieces independently - head over
 
 ## Ghost Content API
 
-All queries fetch from [Ghost's Content API](https://ghost.org/docs/api/v3/content).
+See the [`@foo-software/ghost-graphql` package](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#ghost-content-api).
 
 #### Pagination and Filtering
 
-Resolvers with pagination and filter arguments can be found by inspecting the schema. Arguments mirror the parameters as [documented](https://ghost.org/docs/api/v3/content/#parameters).
-
-Resources with pagination respond with a payload of [edges](https://graphql.org/learn/pagination/) loosely based on the [GraphQL connection spec provided by Relay](https://relay.dev/graphql/connections.htm). Pagination does not support cursors for the time being due to limitations from Ghost's Content API.
+See the [`@foo-software/ghost-graphql` package](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#pagination-and-filtering).
 
 ## Programmatic Usage
 
@@ -112,36 +110,7 @@ docker run \
 
 ## Environment Variables
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Required</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>GHOST_API_KEY</code></td>
-    <td>A Ghost Content API key as documented <a href="https://ghost.org/docs/api/v3/content/#key">here</a>.</td>
-    <td>string</td>
-    <td>yes</td>
-    <td>--</td>
-  </tr>
-  <tr>
-    <td><code>GHOST_API_URL</code></td>
-    <td>A Ghost admin URL as documented <a href="https://ghost.org/docs/api/v3/content/#url">here</a>. Don't use a trailing slash.</td>
-    <td>string</td>
-    <td>yes</td>
-    <td>--</td>
-  </tr>
-  <tr>
-    <td><code>GHOST_API_VERSION</code></td>
-    <td>The version of Ghost API as documented <a href="https://ghost.org/docs/api/v3/content/#path--version">here</a>.</td>
-    <td><code>enum { v3 = 'v3' }</code>(only support for v3 at this time)</td>
-    <td>no</td>
-    <td><code>v3</code></td>
-  </tr>
-</table>
+See the [`@foo-software/ghost-graphql` package](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
 
 ## Schema
 

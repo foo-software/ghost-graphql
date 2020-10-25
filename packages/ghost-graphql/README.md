@@ -17,7 +17,7 @@ All queries fetch from [Ghost's Content API](https://ghost.org/docs/api/v3/conte
 
 Resolvers with pagination and filter arguments can be found by inspecting the schema. Arguments mirror the parameters as [documented](https://ghost.org/docs/api/v3/content/#parameters).
 
-Resources with pagination respond with a payload of [edges](https://graphql.org/learn/pagination/) loosely based on the [GraphQL connection spec provided by Relay](https://relay.dev/graphql/connections.htm). Pagination does not support cursors for the time being due to limitations from Ghost's Content API.
+Resources with pagination respond with a list of [edges](https://graphql.org/learn/pagination/#pagination-and-edges) **loosely** based on the [GraphQL connection spec provided by Relay](https://relay.dev/graphql/connections.htm). Pagination does not support cursors for the time being due to limitations from Ghost's Content API.
 
 ## Environment Variables
 
