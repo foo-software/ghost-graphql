@@ -7,7 +7,7 @@ Examples of available endpoints and corresponding queries documented [here](docs
 ## Packages
 
 - [`@foo-software/ghost-graphql`](packages/ghost-graphql): Apollo GraphQL data sources, query resolvers, schemas, and types for Ghost.
-- [`@foo-software/ghost-graphql-server`](packages/ghost-graphql-server): An Apollo Ghost GraphQL server supporting programmatic or CLI usage.
+- [`@foo-software/ghost-graphql-server`](packages/ghost-graphql-server): An Apollo GraphQL server for Ghost supporting programmatic or CLI usage.
 
 ## Schema
 
