@@ -1,6 +1,6 @@
 {
   "name": "@foo-software/ghost-graphql-server",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
   "description": "A Ghost GraphQL server",
   "bugs": {
