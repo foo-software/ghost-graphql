@@ -1,6 +1,6 @@
 # GraphQL for Ghost
 
-A monorepo providing an [Apollo Server](https://www.apollographql.com/docs/apollo-server/) for [Ghost](https://ghost.org/) and exports all pieces independently.
+A monorepo providing an [Apollo Server](https://www.apollographql.com/docs/apollo-server/) for [Ghost](https://ghost.org/) and the pieces independently.
 
 Examples of available endpoints and corresponding queries documented [here](docs/endpoints-to-query.md). These examples may not be up to date and offer complete details, so viewing the [schema](#schema) directly would be recommended.
 
