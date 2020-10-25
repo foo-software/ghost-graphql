@@ -12,14 +12,13 @@
   "lint-staged": {
     "*.{graphql,js,jsx,ts,tsx,json,css,scss,md}": [
       "node packages/ghost-graphql/dist/bin/generate-schema.js",
-      "prettier --single-quote --write",
-      "git add"
+      "prettier --single-quote --write"
     ]
   },
   "devDependencies": {
     "husky": "^4.2.5",
     "lerna": "^3.18.2",
-    "lint-staged": "^10.2.11",
+    "lint-staged": "^10.4.2",
     "prettier": "^2.0.5"
   }
 }
