@@ -1,6 +1,6 @@
 # `@foo-software/ghost-graphql-server`
 
-> A GraphQL server for Ghost. This project exports an [Apollo Server](https://www.apollographql.com/docs/apollo-server/) class with pre-defined options to provide querying of a Ghost blog API programmatically and exposes a CLI for command line usage. Below are features of this project.
+A GraphQL server for Ghost. This project exports an [Apollo Server](https://www.apollographql.com/docs/apollo-server/) class with pre-defined options to provide querying of a Ghost blog API programmatically and exposes a CLI for command line usage. Below are features of this project.
 
 - Included types for TypeScript support (this project is written in TypeScript as a matter of fact).
 - Exports an Apollo Server class as a module supporting overriding options (to override the pre-populated options that resolve Ghost API endpoints).
