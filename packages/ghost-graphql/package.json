@@ -1,6 +1,6 @@
 {
   "name": "@foo-software/ghost-graphql",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
   "description": "GraphQL data sources, query resolvers, schemas, and types for Ghost.",
   "bugs": {
