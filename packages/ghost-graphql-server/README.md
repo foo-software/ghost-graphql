@@ -1,12 +1,12 @@
 # `@foo-software/ghost-graphql-server`
 
-A GraphQL server for Ghost. This project exports an [Apollo Server](https://www.apollographql.com/docs/apollo-server/) class with pre-defined options to provide querying of a Ghost blog API programmatically and exposes a CLI for command line usage. Below are features of this project.
+> A GraphQL server for Ghost. This project exports an [Apollo Server](https://www.apollographql.com/docs/apollo-server/) class with pre-defined options to provide querying of a Ghost blog API programmatically and exposes a CLI for command line usage. Below are features of this project.
 
 - Included types for TypeScript support (this project is actually written in TypeScript).
 - Exports an Apollo Server class as a module supporting overriding options (to override the pre-populated options that resolve Ghost API endpoints).
 - Exposes a CLI (with limited options).
 
-If you're looking to import resolvers or other pieces independently, or visualize queries - head over to the [`@foo-software/ghost-graphql` package](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql).
+_If you're looking to import resolvers or other pieces independently, or visualize queries - head over to the [`@foo-software/ghost-graphql` package](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql)._
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ If you're looking to import resolvers or other pieces independently, or visualiz
 - [CLI Usage](#cli-usage)
   - [CLI Options](#cli-options)
 - [Docker Usage](#docker-usage)
-- [Enviroment Variables](#environment-variables)
+- [Environment Variables](#environment-variables)
 
 ## Programmatic Usage
 
@@ -97,7 +97,7 @@ docker run \
   ghost-graphql-server --port 4000
 ```
 
-## Enviroment Variables
+## Environment Variables
 
 <table>
   <tr>
