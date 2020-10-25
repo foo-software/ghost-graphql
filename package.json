@@ -1,6 +1,14 @@
 {
   "name": "root",
   "private": true,
+  "keywords": [
+    "ghost",
+    "blog",
+    "graphql",
+    "apollo",
+    "typescript",
+    "server"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
