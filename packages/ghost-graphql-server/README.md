@@ -6,7 +6,7 @@
 - Exports an Apollo Server class as a module supporting overriding options (to override the pre-populated options that resolve Ghost API endpoints).
 - Exposes a CLI (with limited options).
 
-_If you're looking to import resolvers or other pieces independently, or visualize queries - head over to the [`@foo-software/ghost-graphql` package](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql)._
+_If you're looking to import resolvers or other pieces independently - head over to the [`@foo-software/ghost-graphql` package](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql)._
 
 ## Table of Contents
 
@@ -16,6 +16,7 @@ _If you're looking to import resolvers or other pieces independently, or visuali
   - [CLI Options](#cli-options)
 - [Docker Usage](#docker-usage)
 - [Environment Variables](#environment-variables)
+- [Schema Structure](#schema-structure)
 
 ## Programmatic Usage
 
@@ -129,3 +130,7 @@ docker run \
     <td>--</td>
   </tr>
 </table>
+
+## Schema Structure
+
+The schema structure is provided in [schema.graphql of the `@foo-software/ghost-graphql` package](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql/schema.graphql).
