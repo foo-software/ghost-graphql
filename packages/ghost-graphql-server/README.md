@@ -10,8 +10,8 @@ _If you're looking to import resolvers or other pieces independently - head over
 
 ## Table of Contents
 
-- [Ghost Content API](ghost-content-api)
-  - [Pagination and Filtering](pagination-and-filtering)
+- [Ghost Content API](#ghost-content-api)
+  - [Pagination and Filtering](#pagination-and-filtering)
 - [Programmatic Usage](#programmatic-usage)
   - [`createGhostGraphQLServer` Options](#createghostgraphqlserver-options)
 - [CLI Usage](#cli-usage)

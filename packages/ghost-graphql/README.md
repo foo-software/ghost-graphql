@@ -4,8 +4,8 @@ GraphQL data sources, query resolvers, schemas, and types for [Ghost](https://gh
 
 ## Table of Contents
 
-- [Ghost Content API](ghost-content-api)
-  - [Pagination and Filtering](pagination-and-filtering)
+- [Ghost Content API](#ghost-content-api)
+  - [Pagination and Filtering](#pagination-and-filtering)
 - [Environment Variables](#environment-variables)
 - [Schema](#schema)
 
