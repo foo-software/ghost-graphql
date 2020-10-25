@@ -2,7 +2,7 @@
 
 A monorepo providing an [Apollo Server](https://www.apollographql.com/docs/apollo-server/) for [Ghost](https://ghost.org/) and the pieces independently.
 
-Examples of available endpoints and corresponding queries documented [here](docs/endpoints-to-query.md). These examples may not be up to date and offer complete details, so viewing the [schema](#schema) directly would be recommended.
+Examples of available endpoints and corresponding queries documented [here](docs/endpoints-to-query.md). These examples may not be up to date and offer complete details, so viewing the [schema](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql/schema.graphql) directly is encouraged.
 
 ## Packages
 
