@@ -10,13 +10,25 @@ _If you're looking to import resolvers or other pieces independently - head over
 
 ## Table of Contents
 
+- [Ghost Content API](ghost-content-api)
+  - [Pagination and Filtering](pagination-and-filtering)
 - [Programmatic Usage](#programmatic-usage)
   - [`createGhostGraphQLServer` Options](#createghostgraphqlserver-options)
 - [CLI Usage](#cli-usage)
   - [CLI Options](#cli-options)
 - [Docker Usage](#docker-usage)
 - [Environment Variables](#environment-variables)
-- [Schema Structure](#schema-structure)
+- [Schema](#schema)
+
+## Ghost Content API
+
+All queries fetch from [Ghost's Content API](https://ghost.org/docs/api/v3/content).
+
+#### Pagination and Filtering
+
+Resolvers with pagination and filter arguments can be found by inspecting the schema. Arguments mirror the parameters as [documented](https://ghost.org/docs/api/v3/content/#parameters).
+
+Resources with pagination respond with a payload of [edges](https://graphql.org/learn/pagination/) loosely based on the [GraphQL connection spec provided by Relay](https://relay.dev/graphql/connections.htm). Pagination does not support cursors for the time being due to limitations from Ghost's Content API.
 
 ## Programmatic Usage
 
@@ -131,6 +143,6 @@ docker run \
   </tr>
 </table>
 
-## Schema Structure
+## Schema
 
 The schema structure can be seen in [schema.graphql of the `@foo-software/ghost-graphql` package](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql/schema.graphql).

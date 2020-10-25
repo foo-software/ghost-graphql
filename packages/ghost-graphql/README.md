@@ -4,8 +4,20 @@ GraphQL data sources, query resolvers, schemas, and types for [Ghost](https://gh
 
 ## Table of Contents
 
+- [Ghost Content API](ghost-content-api)
+  - [Pagination and Filtering](pagination-and-filtering)
 - [Environment Variables](#environment-variables)
-- [Schema Structure](#schema-structure)
+- [Schema](#schema)
+
+## Ghost Content API
+
+All queries fetch from [Ghost's Content API](https://ghost.org/docs/api/v3/content).
+
+#### Pagination and Filtering
+
+Resolvers with pagination and filter arguments can be found by inspecting the schema. Arguments mirror the parameters as [documented](https://ghost.org/docs/api/v3/content/#parameters).
+
+Resources with pagination respond with a payload of [edges](https://graphql.org/learn/pagination/) loosely based on the [GraphQL connection spec provided by Relay](https://relay.dev/graphql/connections.htm). Pagination does not support cursors for the time being due to limitations from Ghost's Content API.
 
 ## Environment Variables
 
@@ -40,6 +52,6 @@ GraphQL data sources, query resolvers, schemas, and types for [Ghost](https://gh
   </tr>
 </table>
 
-## Schema Structure
+## Schema
 
 The schema structure can be seen in [schema.graphql of the `@foo-software/ghost-graphql` package](schema.graphql).
