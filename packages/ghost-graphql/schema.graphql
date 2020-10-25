@@ -1,12 +1,27 @@
 type Query {
+  """https://ghost.org/docs/api/v3/content/#authors"""
   author(id: String, slug: String): Author
+
+  """https://ghost.org/docs/api/v3/content/#authors"""
   authors(fields: [String], filter: [String], formats: [Format], include: [String], limit: Int, order: String, page: Int): AuthorsConnection
+
+  """https://ghost.org/docs/api/v3/content/#pages"""
   page(id: String, slug: String): Page
+
+  """https://ghost.org/docs/api/v3/content/#pages"""
   pages(fields: [String], filter: [String], formats: [Format], include: [String], limit: Int, order: String, page: Int): PagesConnection
+
+  """https://ghost.org/docs/api/v3/content/#posts"""
   post(id: String, slug: String): Post
+
+  """https://ghost.org/docs/api/v3/content/#posts"""
   posts(fields: [String], filter: [String], formats: [Format], include: [String], limit: Int, order: String, page: Int): PostsConnection
   settings: Settings
+
+  """https://ghost.org/docs/api/v3/content/#tags"""
   tag(id: String, slug: String): Tag
+
+  """https://ghost.org/docs/api/v3/content/#tags"""
   tags(fields: [String], filter: [String], formats: [Format], include: [String], limit: Int, order: String, page: Int): TagsConnection
 }
 
