@@ -13,17 +13,23 @@
     "typescript",
     "server"
   ],
+  "bin": {
+    "ghost-graphql-server": "dist/bin/ghost-graphql-server.js"
+  },
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
     "dev": "NODE_ENV=development ts-node-dev --respawn --inspect -- ./src/index.ts | bunyan --color",
+    "ghost-graphql-server": "node dist/bin/ghost-graphql-server.js",
     "prepare": "npm run clean && npm run build",
     "start": "npm run build && node dist | bunyan --color"
   },
   "dependencies": {
     "@foo-software/ghost-graphql": "^0.1.1",
+    "@types/meow": "^5.0.0",
     "apollo-server": "^2.18.2",
-    "graphql": "^15.3.0"
+    "graphql": "^15.3.0",
+    "meow": "^7.1.1"
   },
   "devDependencies": {
     "@types/graphql": "^14.5.0",
