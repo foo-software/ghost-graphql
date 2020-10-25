@@ -119,7 +119,7 @@ docker run \
     <td>The version of Ghost API as documented <a href="https://ghost.org/docs/api/v3/content/#path--version">here</a>.</td>
     <td><code>enum { v3 = 'v3' }</code>(only support for v3 at this time)</td>
     <td>No</td>
-    <td>v3</td>
+    <td><code>v3</code></td>
   </tr>
   <tr>
     <td><code>GHOST_API_URL</code></td>
