@@ -1,6 +1,5 @@
 import { ApolloServer } from 'apollo-server';
 import { dataSources, QuerySchema } from '@foo-software/ghost-graphql';
-import npmPackage from '../package.json';
 
 const server = new ApolloServer({
   schema: QuerySchema,
@@ -14,5 +13,5 @@ const server = new ApolloServer({
 });
 
 server.listen().then(() => {
-  console.log(`GraphQL running on version ${npmPackage.version} 🚀`);
+  console.log(`GraphQL is running 🚀`);
 });
