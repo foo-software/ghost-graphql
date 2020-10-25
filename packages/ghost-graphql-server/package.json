@@ -25,15 +25,11 @@
     "clean": "rimraf dist",
     "dev": "NODE_ENV=development ts-node-dev --respawn --inspect -- ./src/index.ts | bunyan --color",
     "ghost-graphql-server": "node dist/bin/ghost-graphql-server.js",
-    "jest": "jest",
     "prepare": "npm run clean && npm run build",
-    "start": "npm run build && node dist | bunyan --color",
-    "test": "npm run test:integration",
-    "test:integration": "jest ./__tests__/integration --runInBand"
+    "start": "npm run build && node dist | bunyan --color"
   },
   "dependencies": {
     "@foo-software/ghost-graphql": "^0.1.16",
-    "@types/jest": "^26.0.10",
     "@types/meow": "^5.0.0",
     "apollo-server": "^2.18.2",
     "graphql": "^15.3.0",
@@ -42,12 +38,9 @@
   "devDependencies": {
     "@types/graphql": "^14.5.0",
     "@types/graphql-type-json": "^0.3.2",
-    "@types/jest": "^26.0.10",
     "@types/node": "^14.14.2",
     "bunyan": "^1.8.14",
-    "jest": "^26.4.0",
     "rimraf": "^3.0.2",
-    "ts-jest": "^26.2.0",
     "ts-node-dev": "^1.0.0",
     "typescript": "^4.0.3"
   }
