@@ -1,8 +1,8 @@
 {
-  "name": "@foo-software/ghost-graphql-server",
+  "name": "@foo-software/ghost-graphql",
   "version": "0.1.0",
   "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
-  "description": "A Ghost GraphQL server",
+  "description": "GraphQL data sources, query resolvers, schemas, and types for Ghost.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
@@ -11,27 +11,32 @@
     "graphql",
     "apollo",
     "typescript",
-    "server"
+    "types",
+    "queries",
+    "data sources"
   ],
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
-    "dev": "NODE_ENV=development ts-node-dev --respawn --inspect -- ./src/index.ts | bunyan --color",
-    "prepare": "npm run clean && npm run build",
-    "start": "npm run build && node dist | bunyan --color"
+    "prepare": "npm run clean && npm run build"
+  },
+  "peerDependencies": {
+    "apollo-server": "2.x",
+    "graphql": "15.x"
   },
   "dependencies": {
-    "@foo-software/ghost-graphql": "^0.1.0",
-    "apollo-server": "^2.18.2",
-    "graphql": "^15.3.0"
+    "apollo-datasource-rest": "^0.9.4",
+    "camelcase-keys": "^6.2.2"
   },
   "devDependencies": {
+    "@types/camelcase-keys": "^5.1.1",
     "@types/graphql": "^14.5.0",
     "@types/graphql-type-json": "^0.3.2",
     "@types/node": "^14.14.2",
+    "apollo-server": "^2.18.2",
     "bunyan": "^1.8.14",
+    "graphql": "^15.3.0",
     "rimraf": "^3.0.2",
-    "ts-node-dev": "^1.0.0",
     "typescript": "^4.0.3"
   }
 }

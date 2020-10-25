@@ -1,10 +1,9 @@
 import { ApolloServer } from 'apollo-server';
-import dataSources from './datasources';
+import { dataSources, QuerySchema } from '@foo-software/ghost-graphql';
 import npmPackage from '../package.json';
-import schema from './schema';
 
 const server = new ApolloServer({
-  schema,
+  schema: QuerySchema,
   dataSources,
   onHealthCheck: () => {
     // we could check on any queries and reject the promise, if
