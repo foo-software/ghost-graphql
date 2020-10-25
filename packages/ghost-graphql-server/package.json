@@ -1,6 +1,6 @@
 {
   "name": "@foo-software/ghost-graphql-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
   "description": "A Ghost GraphQL server",
   "main": "dist/index.js",
@@ -21,7 +21,7 @@
     "start": "npm run build && node dist | bunyan --color"
   },
   "dependencies": {
-    "@foo-software/ghost-graphql": "^0.1.0",
+    "@foo-software/ghost-graphql": "^0.1.1",
     "apollo-server": "^2.18.2",
     "graphql": "^15.3.0"
   },
