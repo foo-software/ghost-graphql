@@ -94,7 +94,7 @@ GHOST_API_KEY=$GHOST_API_KEY GHOST_URL=$GHOST_URL \
     <td><code>port</code></td>
     <td>The port for GraphQL server to run on.</td>
     <td>number</td>
-    <td>No</td>
+    <td>no</td>
     <td><code>4000</code></td>
   </tr>
 </table>
@@ -124,21 +124,21 @@ docker run \
     <td><code>GHOST_API_KEY</code></td>
     <td>A Ghost Content API key as documented <a href="https://ghost.org/docs/api/v3/content/#key">here</a>.</td>
     <td>string</td>
-    <td>Yes</td>
+    <td>yes</td>
     <td>--</td>
   </tr>
   <tr>
     <td><code>GHOST_API_VERSION</code></td>
     <td>The version of Ghost API as documented <a href="https://ghost.org/docs/api/v3/content/#path--version">here</a>.</td>
     <td><code>enum { v3 = 'v3' }</code>(only support for v3 at this time)</td>
-    <td>No</td>
+    <td>no</td>
     <td><code>v3</code></td>
   </tr>
   <tr>
     <td><code>GHOST_API_URL</code></td>
     <td>A Ghost admin URL as documented <a href="https://ghost.org/docs/api/v3/content/#url">here</a>. Don't use a trailing slash.</td>
     <td>string</td>
-    <td>Yes</td>
+    <td>yes</td>
     <td>--</td>
   </tr>
 </table>
