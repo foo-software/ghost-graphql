@@ -6,7 +6,7 @@
   "bugs": {
     "url": "https://github.com/foo-software/ghost-graphql/issues"
   },
-  "homepage": "https://github.com/foo-software/ghost-graphql/packages/ghost-graphql",
+  "homepage": "https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
