@@ -3,6 +3,10 @@
   "version": "0.1.3",
   "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
   "description": "A Ghost GraphQL server",
+  "bugs": {
+    "url": "https://github.com/foo-software/ghost-graphql/issues"
+  },
+  "homepage": "https://github.com/foo-software/ghost-graphql/packages/ghost-graphql-server",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
