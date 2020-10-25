@@ -11,8 +11,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --single-quote --write",
-      "node packages/ghost-graphql/dist/bin/generate-schema.js"
+      "node packages/ghost-graphql/dist/bin/generate-schema.js",
+      "prettier --single-quote --write"
     ]
   },
   "devDependencies": {
