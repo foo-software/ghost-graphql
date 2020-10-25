@@ -10,7 +10,7 @@
     "prettier:all": "prettier --single-quote --write '*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "lint-staged": {
-    "*.{graphql,js,jsx,ts,tsx,json,css,scss,md}": [
+    "*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "node packages/ghost-graphql/dist/bin/generate-schema.js",
       "prettier --single-quote --write"
     ]

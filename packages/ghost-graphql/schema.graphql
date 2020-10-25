@@ -1,45 +1,13 @@
 type Query {
   author(id: String, slug: String): Author
-  authors(
-    fields: [String]
-    filter: [String]
-    formats: [Format]
-    include: [String]
-    limit: Int
-    order: String
-    page: Int
-  ): AuthorsConnection
+  authors(fields: [String], filter: [String], formats: [Format], include: [String], limit: Int, order: String, page: Int): AuthorsConnection
   page(id: String, slug: String): Page
-  pages(
-    fields: [String]
-    filter: [String]
-    formats: [Format]
-    include: [String]
-    limit: Int
-    order: String
-    page: Int
-  ): PagesConnection
+  pages(fields: [String], filter: [String], formats: [Format], include: [String], limit: Int, order: String, page: Int): PagesConnection
   post(id: String, slug: String): Post
-  posts(
-    fields: [String]
-    filter: [String]
-    formats: [Format]
-    include: [String]
-    limit: Int
-    order: String
-    page: Int
-  ): PostsConnection
+  posts(fields: [String], filter: [String], formats: [Format], include: [String], limit: Int, order: String, page: Int): PostsConnection
   settings: Settings
   tag(id: String, slug: String): Tag
-  tags(
-    fields: [String]
-    filter: [String]
-    formats: [Format]
-    include: [String]
-    limit: Int
-    order: String
-    page: Int
-  ): TagsConnection
+  tags(fields: [String], filter: [String], formats: [Format], include: [String], limit: Int, order: String, page: Int): TagsConnection
 }
 
 type Author {
