@@ -53,6 +53,7 @@ type AuthorsEdge {
 }
 
 type Meta {
+  """https://ghost.org/docs/api/v3/content/#pagination"""
   pagination: Pagination
 }
 

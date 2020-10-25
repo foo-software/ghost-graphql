@@ -16,6 +16,9 @@ export default new GraphQLObjectType({
   name: 'Meta',
 
   fields: () => ({
-    pagination: { type: Pagination },
+    pagination: {
+      type: Pagination,
+      description: 'https://ghost.org/docs/api/v3/content/#pagination',
+    },
   }),
 });
