@@ -1,6 +1,6 @@
 {
   "name": "@foo-software/ci-tools",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
   "description": "CI helpers to aide in deploy, build, publish, release, etc. This package is not published.",
   "private": true,
