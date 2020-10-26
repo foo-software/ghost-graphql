@@ -9,7 +9,10 @@ const run = async () => {
     git.push();
     console.log('✅ schema committed');
   } catch (error) {
-    if (error.message.includes('No staged files found')) {
+    if (
+      error.message.includes('No staged files found') ||
+      error.message.includes('nothing to commit')
+    ) {
       process.exit();
     }
     console.error(error);
