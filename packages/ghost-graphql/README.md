@@ -31,7 +31,7 @@ Resources with pagination respond with a list of [edges](https://graphql.org/lea
 
 ## Custom Implementation Example
 
-In most custom implementations, you'll only need to import resolvers so below is an example how that can be done. For implementations that are more complicated - it is possible to import any part of this package, including data sources, types, etc - just take a look at [what is exported](src/index.ts).
+In most custom implementations, you'll only need to import resolvers. For implementations that are more complicated - it is possible to import any part of this package, including data sources, types, etc - just take a look at [what is exported](src/index.ts).
 
 #### Example
 
