@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import * as git from '../git';
 import * as lerna from '../lerna';
 
 const run = async () => {
