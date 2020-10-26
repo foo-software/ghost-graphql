@@ -4,7 +4,6 @@ export default (command: string) => {
   const result = shell.exec(command);
   const isGrep = command.includes('grep');
   const isGitCommit = command.includes('git commit');
-  console.log('command', command);
 
   // for some reason grep commands can return exit code `123`
   // when nothing was returned (and everything is fine)
