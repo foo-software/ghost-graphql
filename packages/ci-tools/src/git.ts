@@ -9,7 +9,7 @@ export const config = () => {
   shell('git config --global user.name Foo Bot');
 };
 
-export const checkout = (branch = 'master') => {
+export const checkout = (branch: string = 'master') => {
   shell(`git remote set-url origin ${GIT_URL}`);
   shell('git fetch');
   shell(`git checkout ${branch} && git pull`);
