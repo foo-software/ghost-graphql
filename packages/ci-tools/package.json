@@ -12,6 +12,7 @@
     "prepare": "npm run clean && npm run build"
   },
   "dependencies": {
+    "git-commands": "^0.1.0",
     "shelljs": "^0.8.3"
   },
   "devDependencies": {

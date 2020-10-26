@@ -1,26 +1,27 @@
-import shell from './shell';
+import Git from 'git-commands';
 
 const { PERSONAL_ACCESS_TOKEN: TOKEN } = process.env;
 
 const GIT_URL = `https://foo-software-bot:${TOKEN}@github.com/foo-software/ghost-graphql`;
+const git = new Git({ reps: GIT_URL });
 
 export const config = () => {
-  shell('git config --global user.email notifications@foo.software');
-  shell('git config --global user.name Foo Bot');
+  console.log(git.command('checkout master'));
+  console.log(
+    git.command('config --global user.email notifications@foo.software')
+  );
+  console.log(git.command('config --global user.name Foo Bot'));
 };
 
 export const checkout = (branch: string = 'master') => {
-  shell(`git remote set-url origin ${GIT_URL}`);
-  shell('git fetch');
-  shell(`git checkout ${branch} && git pull`);
+  console.log(git.command('fetch'));
+  console.log(git.command(`checkout ${branch} && git pull`));
 };
 
 export const add = () => {
-  shell('git add .');
+  console.log(git.command('add .'));
 };
 
 export const commit = (message: string) => {
-  shell(`git remote set-url origin ${GIT_URL}`);
-  shell('git fetch');
-  shell(`git commit -am '${message} (skip ci)'`);
+  console.log(git.command(`commit -am '${message} (skip ci)'`));
 };
