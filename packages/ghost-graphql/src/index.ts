@@ -7,7 +7,7 @@ export { default as dataSources } from './datasources';
 export { default as PagesDataSource } from './datasources/pages';
 export { default as PostsDataSource } from './datasources/posts';
 export { default as ResourceDataSource } from './datasources/resource';
-export { default as SettingsSource } from './datasources/settings';
+export { default as SettingsDataSource } from './datasources/settings';
 export { default as TagsDataSource } from './datasources/tags';
 
 // resolver creators
