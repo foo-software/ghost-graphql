@@ -23,6 +23,7 @@ jobs:
           lerna bootstrap --hoist
       - name: Generate Schema
         run: |
+          node packages/ci-tools/dist/bin/config-git.js
           node packages/ghost-graphql/dist/bin/generate-schema.js
           node packages/ci-tools/dist/bin/commit-schema.js
       - name: Publish Packages
