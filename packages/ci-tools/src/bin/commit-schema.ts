@@ -11,7 +11,8 @@ const run = async () => {
     console.log('✅ schema committed');
   } catch (error) {
     console.error(error);
-    console.log('message', error.message);
+    console.log('message', `${error}`);
+    console.log('message', `${error.message}`);
     process.exit(1);
   }
 };
