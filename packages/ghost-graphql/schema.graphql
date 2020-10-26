@@ -16,6 +16,8 @@ type Query {
 
   """https://ghost.org/docs/api/v3/content/#posts"""
   posts(fields: [String], filter: [String], formats: [Format], include: [String], limit: Int, order: String, page: Int): PostsConnection
+
+  """https://ghost.org/docs/api/v3/content/#settings"""
   settings: Settings
 
   """https://ghost.org/docs/api/v3/content/#tags"""
