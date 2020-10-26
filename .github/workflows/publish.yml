@@ -20,7 +20,7 @@ jobs:
       - name: Install
         run: |
           npm install lerna -g
-          lerna bootstrap
+          lerna bootstrap --hoist
       - name: Generate Schema
         run: |
           node packages/ghost-graphql/dist/bin/generate-schema.js
