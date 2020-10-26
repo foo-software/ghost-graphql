@@ -1,62 +1,25 @@
 import { GraphQLObjectType } from 'graphql';
-import AuthorType, {
-  AuthorsConnection as AuthorsConnectionType,
-} from '../types/Author';
-import PageType, {
-  PagesConnection as PagesConnectionType,
-} from '../types/Page';
-import PostType, {
-  PostsConnection as PostsConnectionType,
-} from '../types/Post';
-import TagType, { TagsConnection as TagsConnectionType } from '../types/Tag';
-import DataSourceKeyType from '../types/DataSourceKey';
-import createResourceResolver from '../resolverCreators/createResourceResolver';
-import createResourceConnectionResolver from '../resolverCreators/createResourceConnectionResolver ';
+import author from '../resolvers/author';
+import authors from '../resolvers/authors';
+import page from '../resolvers/page';
+import pages from '../resolvers/pages';
+import post from '../resolvers/post';
+import posts from '../resolvers/posts';
 import settings from '../resolvers/settings';
+import tag from '../resolvers/tag';
+import tags from '../resolvers/tags';
 
 export default new GraphQLObjectType({
   name: 'Query',
   fields: () => ({
-    author: createResourceResolver({
-      dataSource: DataSourceKeyType.authorsDataSource,
-      resource: 'authors',
-      type: AuthorType,
-    }),
-    authors: createResourceConnectionResolver({
-      dataSource: DataSourceKeyType.authorsDataSource,
-      resource: 'authors',
-      type: AuthorsConnectionType,
-    }),
-    page: createResourceResolver({
-      dataSource: DataSourceKeyType.pagesDataSource,
-      resource: 'pages',
-      type: PageType,
-    }),
-    pages: createResourceConnectionResolver({
-      dataSource: DataSourceKeyType.pagesDataSource,
-      resource: 'pages',
-      type: PagesConnectionType,
-    }),
-    post: createResourceResolver({
-      dataSource: DataSourceKeyType.postsDataSource,
-      resource: 'posts',
-      type: PostType,
-    }),
-    posts: createResourceConnectionResolver({
-      dataSource: DataSourceKeyType.postsDataSource,
-      resource: 'posts',
-      type: PostsConnectionType,
-    }),
+    author,
+    authors,
+    page,
+    pages,
+    post,
+    posts,
     settings,
-    tag: createResourceResolver({
-      dataSource: DataSourceKeyType.tagsDataSource,
-      resource: 'tags',
-      type: TagType,
-    }),
-    tags: createResourceConnectionResolver({
-      dataSource: DataSourceKeyType.tagsDataSource,
-      resource: 'tags',
-      type: TagsConnectionType,
-    }),
+    tag,
+    tags,
   }),
 });
