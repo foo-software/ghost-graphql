@@ -57,7 +57,6 @@ import {
 } from '@foo-software/ghost-graphql';
 
 const server = new ApolloServer({
-  // typeDefs,
   resolvers: {
     Query: {
       author,
@@ -73,8 +72,6 @@ const server = new ApolloServer({
   },
   dataSources: () => {
     return {
-      // moviesAPI: new MoviesAPI(),
-      // personalizationAPI: new PersonalizationAPI(),
       authorsDataSource: new AuthorsDataSource(),
       pagesDataSource: new PagesDataSource(),
       postsDataSource: new PostsDataSource(),
