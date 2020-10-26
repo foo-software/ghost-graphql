@@ -8,6 +8,7 @@ const run = async () => {
     console.log('⌛ git commit...');
     git.add();
     git.commit('chore: generate schema');
+    git.push();
     console.log('✅ schema committed');
   } catch (error) {
     if (error.message.includes('No staged files found')) {

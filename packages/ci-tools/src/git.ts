@@ -20,7 +20,9 @@ export const add = () => {
 };
 
 export const commit = (message: string) => {
-  shell(`git remote set-url origin ${GIT_URL}`);
-  shell('git fetch');
   shell(`git commit -am '${message} (skip ci)'`);
+};
+
+export const push = () => {
+  shell('git push');
 };
