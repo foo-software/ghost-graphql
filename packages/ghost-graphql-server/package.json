@@ -1,6 +1,6 @@
 {
   "name": "@foo-software/ghost-graphql-server",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
   "description": "An Apollo GraphQL server for Ghost supporting programmatic or CLI usage.",
   "bugs": {
@@ -29,7 +29,7 @@
     "start": "npm run build && node dist | bunyan --color"
   },
   "dependencies": {
-    "@foo-software/ghost-graphql": "^1.0.4",
+    "@foo-software/ghost-graphql": "^1.0.5",
     "@types/meow": "^5.0.0",
     "apollo-server": "^2.18.2",
     "graphql": "^15.3.0",
