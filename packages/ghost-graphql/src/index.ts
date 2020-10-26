@@ -15,15 +15,15 @@ export { default as createResourceResolver } from './resolverCreators/createReso
 export { default as createResourceConnectionResolver } from './resolverCreators/createResourceConnectionResolver ';
 
 // resolvers
-export { default as AuthorResolver } from './resolvers/author';
-export { default as AuthorsResolver } from './resolvers/authors';
-export { default as PageResolver } from './resolvers/page';
-export { default as PagesResolver } from './resolvers/pages';
-export { default as PostResolver } from './resolvers/post';
-export { default as PostsResolver } from './resolvers/posts';
-export { default as SettingsResolver } from './resolvers/settings';
-export { default as TagResolver } from './resolvers/tag';
-export { default as TagsResolver } from './resolvers/tags';
+export { default as authorResolver } from './resolvers/author';
+export { default as authorsResolver } from './resolvers/authors';
+export { default as pageResolver } from './resolvers/page';
+export { default as pagesResolver } from './resolvers/pages';
+export { default as postResolver } from './resolvers/post';
+export { default as postsResolver } from './resolvers/posts';
+export { default as settingsResolver } from './resolvers/settings';
+export { default as tagResolver } from './resolvers/tag';
+export { default as tagsResolver } from './resolvers/tags';
 
 // schemas
 export { default as QuerySchema } from './schema';

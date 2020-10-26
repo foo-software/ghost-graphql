@@ -33,9 +33,41 @@ Resources with pagination respond with a list of [edges](https://graphql.org/lea
 
 In most custom implementations, you'll only need to import resolvers. For implementations that are more complicated - it is possible to import any part of this package, including data sources, types, etc - just take a look at [what is exported](src/index.ts).
 
+Before following the example below, make sure you've setup environment variables per the [getting started guide](#getting-started).
+
 #### Example
 
-Coming soon...
+Assuming you've setup a server similar to the example found in [Apollo Server docs](https://www.apollographql.com/docs/apollo-server/getting-started/#step-5-define-a-resolver), you could import and use resolvers as shown below.
+
+```javascript
+import {
+  authorResolver as author,
+  authorsResolver as authors,
+  authorResolver as author,
+  authorsResolver as authors,
+  pageResolver as page,
+  pagesResolver as pages,
+  postResolver as post,
+  postsResolver as posts,
+  settingsResolver as settings,
+  tagResolver as tag,
+  tagsResolver as tags,
+} from '@foo-software/ghost-graphql';
+
+const resolvers = {
+  Query: {
+    author,
+    authors,
+    page,
+    pages,
+    post,
+    posts,
+    settings,
+    tag,
+    tags,
+  },
+};
+```
 
 ## Environment Variables
 
