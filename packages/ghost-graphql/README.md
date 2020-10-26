@@ -37,7 +37,7 @@ Before following the example below, make sure you've setup environment variables
 
 #### Example
 
-Assuming you've setup a server similar to the example found in [Apollo Server docs](https://www.apollographql.com/docs/apollo-server/getting-started/#step-5-define-a-resolver), you could import and use resolvers as shown below.
+Example assuming you've setup a server similar to the example found in [Apollo Server docs](https://www.apollographql.com/docs/apollo-server/data/data-sources/#accessing-data-sources-from-resolvers).
 
 ```javascript
 import {
@@ -45,26 +45,49 @@ import {
   authorsResolver as authors,
   pageResolver as page,
   pagesResolver as pages,
+  PagesDataSource,
   postResolver as post,
   postsResolver as posts,
+  PostsDataSource,
   settingsResolver as settings,
+  SettingsDataSource,
   tagResolver as tag,
+  TagsDataSource,
   tagsResolver as tags,
 } from '@foo-software/ghost-graphql';
 
-const resolvers = {
-  Query: {
-    author,
-    authors,
-    page,
-    pages,
-    post,
-    posts,
-    settings,
-    tag,
-    tags,
+const server = new ApolloServer({
+  // typeDefs,
+  resolvers: {
+    Query: {
+      author,
+      authors,
+      page,
+      pages,
+      post,
+      posts,
+      settings,
+      tag,
+      tags,
+    },
   },
-};
+  dataSources: () => {
+    return {
+      // moviesAPI: new MoviesAPI(),
+      // personalizationAPI: new PersonalizationAPI(),
+      authorsDataSource: new AuthorsDataSource(),
+      pagesDataSource: new PagesDataSource(),
+      postsDataSource: new PostsDataSource(),
+      settingsDataSource: new SettingsDataSource(),
+      tagsDataSource: new TagsDataSource(),
+    };
+  },
+  context: () => {
+    return {
+      token: 'foo',
+    };
+  },
+});
 ```
 
 ## Environment Variables
