@@ -6,8 +6,6 @@ A GraphQL server for [Ghost](https://ghost.org/). This project exports an [Apoll
 - Exports an Apollo Server class as a module supporting overriding options (to override the pre-populated options that resolve Ghost API endpoints).
 - Exposes a CLI (with limited options).
 
-_If you're looking to import resolvers or other pieces independently - head over to the [`@foo-software/ghost-graphql` package](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql)._
-
 ## Table of Contents
 
 - [Quick Start](#quick-start)

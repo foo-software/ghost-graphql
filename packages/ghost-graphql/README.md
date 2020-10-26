@@ -13,7 +13,7 @@ GraphQL data sources, query resolvers, schemas, and types for [Ghost](https://gh
 
 ## Getting Started
 
-Below are steps to get started with a custom implementation. If you're looiking to spin up a standalone server, check out the [guide here](packages/ghost-graphql-server#quick-start) instead.
+Below are steps to get started with a custom implementation. If you're looking to spin up a standalone server, check out the [guide here](packages/ghost-graphql-server#quick-start) instead.
 
 - Determine the [API URL per the docs](https://ghost.org/docs/api/v3/content/#url). You'll need to set this value as [`GHOST_API_URL` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
 - Create and retrieve your [API key per the docs](https://ghost.org/docs/api/v3/content/#key). You'll need to set this value as [`GHOST_API_KEY` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
