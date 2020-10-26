@@ -15,7 +15,7 @@ GraphQL data sources, query resolvers, schemas, and types for [Ghost](https://gh
 
 Below are steps to get started with a custom implementation. If you're looking to spin up a standalone server, check out the [guide here](packages/ghost-graphql-server#quick-start) instead.
 
-- Determine the [API URL per the docs](https://ghost.org/docs/api/v3/content/#url). You'll need to set this value as [`GHOST_API_URL` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
+- Determine the [API URL per the docs](https://ghost.org/docs/api/v3/content/#url). You'll need to set this value as [`GHOST_URL` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
 - Create and retrieve your [API key per the docs](https://ghost.org/docs/api/v3/content/#key). You'll need to set this value as [`GHOST_API_KEY` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
 - Use the [custom implementation example](#custom-implementation-example) as a guide and / or simply peek around the code starting with the [exports](src/index.ts). You can import resolvers, data sources, etc.
 
@@ -105,18 +105,18 @@ const server = new ApolloServer({
     <td>--</td>
   </tr>
   <tr>
-    <td><code>GHOST_API_URL</code></td>
-    <td>A Ghost admin URL as documented <a href="https://ghost.org/docs/api/v3/content/#url">here</a>. Don't use a trailing slash.</td>
-    <td>string</td>
-    <td>yes</td>
-    <td>--</td>
-  </tr>
-  <tr>
     <td><code>GHOST_API_VERSION</code></td>
     <td>The version of Ghost API as documented <a href="https://ghost.org/docs/api/v3/content/#path--version">here</a>.</td>
     <td><code>enum { v3 = 'v3' }</code>(only support for v3 at this time)</td>
     <td>no</td>
     <td><code>v3</code></td>
+  </tr>
+  <tr>
+    <td><code>GHOST_URL</code></td>
+    <td>A Ghost admin URL as documented <a href="https://ghost.org/docs/api/v3/content/#url">here</a>. Don't use a trailing slash.</td>
+    <td>string</td>
+    <td>yes</td>
+    <td>--</td>
   </tr>
 </table>
 

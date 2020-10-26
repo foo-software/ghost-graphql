@@ -23,7 +23,7 @@ A GraphQL server for [Ghost](https://ghost.org/). This project exports an [Apoll
 
 Getting up and running with a standalone is simple and can be done in three ways. Below are all the steps to get up and running.
 
-- Determine the [API URL per the docs](https://ghost.org/docs/api/v3/content/#url). You'll need to set this value as [`GHOST_API_URL` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
+- Determine the [Ghost URL per the docs](https://ghost.org/docs/api/v3/content/#url). You'll need to set this value as [`GHOST_URL` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
 - Create and retrieve your [API key per the docs](https://ghost.org/docs/api/v3/content/#key). You'll need to set this value as [`GHOST_API_KEY` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
 - Choose and follow instructions from one of the below three ways to run your server.
   - [Programmatic](#programmatic-usage)
