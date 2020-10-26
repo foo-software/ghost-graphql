@@ -12,7 +12,7 @@ const run = async () => {
   } catch (error) {
     console.error(error);
     console.log('message', `${error}`);
-    console.log('message', `${error.message}`);
+    console.log('includs', error.message.includes('No staged files found'));
     process.exit(1);
   }
 };
