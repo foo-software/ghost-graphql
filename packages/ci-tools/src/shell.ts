@@ -6,6 +6,7 @@ export default (command: string) => {
 
   // for some reason grep commands can return exit code `123`
   // when nothing was returned (and everything is fine)
+  console.log('code...', result.code);
   if (result.code !== 0 && (!isGrep || result.code !== 123)) {
     throw Error(result.stderr);
   }
