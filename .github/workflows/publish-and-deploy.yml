@@ -1,0 +1,30 @@
+name: Publish and Deploy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+          scope: '@foo-software'
+      - name: Generate Schema
+        run: |
+          node packages/ghost-graphql/dist/bin/generate-schema.js
+          node packages/ci-tools/dist/bin/commit-schema.js
+      - name: Install
+        run: |
+          npm install lerna -g
+          lerna bootstrap
+      - name: Publish Packages
+        run: |
+          node packages/ci-tools/dist/bin/publish-packages.js

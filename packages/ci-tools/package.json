@@ -1,0 +1,22 @@
+{
+  "name": "@foo-software/ci-tools",
+  "version": "0.0.1",
+  "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
+  "description": "CI helpers to aide in deploy, build, publish, release, etc. This package is not published.",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "prepare": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "shelljs": "^0.8.3"
+  },
+  "devDependencies": {
+    "@types/shelljs": "^0.8.8",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.0.3"
+  }
+}
