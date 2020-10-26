@@ -3,7 +3,7 @@ import * as git from '../git';
 
 const run = async () => {
   try {
-    console.log('⌛ configuring git...');
+    console.log('⌛ git configuring...');
     git.config();
     console.log('⌛ git checkout...');
     git.checkout();
