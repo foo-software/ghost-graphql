@@ -2,7 +2,7 @@ import shell from './shell';
 
 const { PERSONAL_ACCESS_TOKEN: TOKEN } = process.env;
 
-const GIT_URL = `https://foo-software-bot:${TOKEN}@github.com/ghost-graphql/foo`;
+const GIT_URL = `https://foo-software-bot:${TOKEN}@github.com/foo-software/ghost-graphql`;
 
 export const config = () => {
   shell('git config --global user.email notifications@foo.software');
