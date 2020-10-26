@@ -4,10 +4,20 @@ GraphQL data sources, query resolvers, schemas, and types for [Ghost](https://gh
 
 ## Table of Contents
 
+- [Getting Started](#getting-started)
 - [Ghost Content API](#ghost-content-api)
   - [Pagination and Filtering](#pagination-and-filtering)
+- [Custom Implementation Example](#custom-implementation-example)
 - [Environment Variables](#environment-variables)
 - [Schema](#schema)
+
+## Getting Started
+
+Below are steps to get started with a custom implementation. If you're looking to spin up a standalone server, check out the [guide here](packages/ghost-graphql-server#quick-start) instead.
+
+- Determine the [API URL per the docs](https://ghost.org/docs/api/v3/content/#url). You'll need to set this value as [`GHOST_API_URL` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
+- Create and retrieve your [API key per the docs](https://ghost.org/docs/api/v3/content/#key). You'll need to set this value as [`GHOST_API_KEY` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
+- Use the [custom implementation example](#custom-implementation-example) as a guide and / or simply peek around the code starting with the [exports](src/index.ts). You can import resolvers, data sources, etc.
 
 ## Ghost Content API
 
@@ -18,6 +28,46 @@ All queries fetch from [Ghost's Content API](https://ghost.org/docs/api/v3/conte
 Resolvers with pagination and filter arguments can be found by inspecting the schema. Arguments mirror the parameters as [documented](https://ghost.org/docs/api/v3/content/#parameters).
 
 Resources with pagination respond with a list of [edges](https://graphql.org/learn/pagination/#pagination-and-edges) **loosely** based on the [GraphQL connection spec provided by Relay](https://relay.dev/graphql/connections.htm). Pagination does not support cursors for the time being due to limitations from Ghost's Content API.
+
+## Custom Implementation Example
+
+In most custom implementations, you'll only need to import resolvers. For implementations that are more complicated - it is possible to import any part of this package, including data sources, types, etc - just take a look at [what is exported](src/index.ts).
+
+Before following the example below, make sure you've setup environment variables per the [getting started guide](#getting-started).
+
+#### Example
+
+Assuming you've setup a server similar to the example found in [Apollo Server docs](https://www.apollographql.com/docs/apollo-server/getting-started/#step-5-define-a-resolver), you could import and use resolvers as shown below.
+
+```javascript
+import {
+  authorResolver as author,
+  authorsResolver as authors,
+  authorResolver as author,
+  authorsResolver as authors,
+  pageResolver as page,
+  pagesResolver as pages,
+  postResolver as post,
+  postsResolver as posts,
+  settingsResolver as settings,
+  tagResolver as tag,
+  tagsResolver as tags,
+} from '@foo-software/ghost-graphql';
+
+const resolvers = {
+  Query: {
+    author,
+    authors,
+    page,
+    pages,
+    post,
+    posts,
+    settings,
+    tag,
+    tags,
+  },
+};
+```
 
 ## Environment Variables
 

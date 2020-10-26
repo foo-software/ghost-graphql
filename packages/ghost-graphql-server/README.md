@@ -6,10 +6,9 @@ A GraphQL server for [Ghost](https://ghost.org/). This project exports an [Apoll
 - Exports an Apollo Server class as a module supporting overriding options (to override the pre-populated options that resolve Ghost API endpoints).
 - Exposes a CLI (with limited options).
 
-_If you're looking to import resolvers or other pieces independently - head over to the [`@foo-software/ghost-graphql` package](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql)._
-
 ## Table of Contents
 
+- [Quick Start](#quick-start)
 - [Ghost Content API](#ghost-content-api)
   - [Pagination and Filtering](#pagination-and-filtering)
 - [Programmatic Usage](#programmatic-usage)
@@ -19,6 +18,19 @@ _If you're looking to import resolvers or other pieces independently - head over
 - [Docker Usage](#docker-usage)
 - [Environment Variables](#environment-variables)
 - [Schema](#schema)
+
+## Quick Start
+
+Getting up and running with a standalone is simple and can be done in three ways. Below are all the steps to get up and running.
+
+- Determine the [API URL per the docs](https://ghost.org/docs/api/v3/content/#url). You'll need to set this value as [`GHOST_API_URL` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
+- Create and retrieve your [API key per the docs](https://ghost.org/docs/api/v3/content/#key). You'll need to set this value as [`GHOST_API_KEY` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
+- Choose and follow instructions from one of the below three ways to run your server.
+  - [Programmatic](#programmatic-usage)
+  - [CLI](#cli-usage)
+  - [Docker](#docker-usage)
+
+If you're looking to integrate with an existing, custom Apollo server - go to the [custom integration guide](packages/ghost-graphql#getting-started)
 
 ## Ghost Content API
 
