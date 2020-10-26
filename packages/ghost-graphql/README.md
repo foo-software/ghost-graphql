@@ -43,8 +43,6 @@ Assuming you've setup a server similar to the example found in [Apollo Server do
 import {
   authorResolver as author,
   authorsResolver as authors,
-  authorResolver as author,
-  authorsResolver as authors,
   pageResolver as page,
   pagesResolver as pages,
   postResolver as post,
