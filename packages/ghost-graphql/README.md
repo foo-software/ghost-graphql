@@ -42,6 +42,7 @@ Example assuming you've setup a server similar to the example found in [Apollo S
 ```javascript
 import {
   authorResolver as author,
+  AuthorsDataSource,
   authorsResolver as authors,
   pageResolver as page,
   pagesResolver as pages,

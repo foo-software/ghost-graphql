@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Queries fetches list of posts 1`] = `
+Object {
+  "data": Object {
+    "posts": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "featureImage": "https://demo.ghost.io/content/images/2019/10/welcome-to-ghost.png",
+            "id": "5b7ada404f87d200b5b1f9c8",
+            "metaDescription": null,
+            "sendEmailWhenPublished": false,
+          },
+        },
+        Object {
+          "node": Object {
+            "featureImage": "https://demo.ghost.io/content/images/2019/10/writing-posts-with-ghost.png",
+            "id": "5b7ada404f87d200b5b1f9c6",
+            "metaDescription": null,
+            "sendEmailWhenPublished": false,
+          },
+        },
+        Object {
+          "node": Object {
+            "featureImage": "https://demo.ghost.io/content/images/2019/10/publishing-options.png",
+            "id": "5b7ada404f87d200b5b1f9c4",
+            "metaDescription": null,
+            "sendEmailWhenPublished": false,
+          },
+        },
+        Object {
+          "node": Object {
+            "featureImage": "https://demo.ghost.io/content/images/2019/10/admin-settings.png",
+            "id": "5b7ada404f87d200b5b1f9c2",
+            "metaDescription": null,
+            "sendEmailWhenPublished": false,
+          },
+        },
+      ],
+      "meta": Object {
+        "pagination": Object {
+          "limit": 15,
+          "next": null,
+          "page": 1,
+          "pages": 1,
+          "prev": null,
+          "total": 4,
+        },
+      },
+      "pageInfo": Object {
+        "hasNextPage": false,
+        "hasPreviousPage": false,
+      },
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;

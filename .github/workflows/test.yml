@@ -1,0 +1,26 @@
+name: Test
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+          scope: '@foo-software'
+      - name: Install
+        run: |
+          npm install lerna -g
+          lerna bootstrap --hoist
+      - name: Integration Tests
+        run: |
+          cd packages/ghost-graphql-integration-tests
+          npm run test
