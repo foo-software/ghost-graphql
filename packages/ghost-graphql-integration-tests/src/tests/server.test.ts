@@ -11,6 +11,8 @@ import {
 import gql from 'graphql-tag';
 import mockAuthorResponse from '../mocks/authorResponse';
 import mockAuthorsResponse from '../mocks/authorsResponse';
+import mockPageResponse from '../mocks/pageResponse';
+import mockPagesResponse from '../mocks/pagesResponse';
 import mockPostResponse from '../mocks/postResponse';
 import mockPostsResponse from '../mocks/postsResponse';
 
@@ -88,6 +90,44 @@ const GET_AUTHORS = gql`
         node {
           id
           profileImage
+          slug
+        }
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      meta {
+        pagination {
+          limit
+          next
+          page
+          pages
+          prev
+          total
+        }
+      }
+    }
+  }
+`;
+
+const GET_PAGE = gql`
+  query page($id: String, $slug: String) {
+    page(id: $id, slug: $slug) {
+      id
+      createdAt
+      slug
+    }
+  }
+`;
+
+const GET_PAGES = gql`
+  query pages($limit: Int, $page: Int) {
+    pages(limit: $limit, page: $page) {
+      edges {
+        node {
+          id
+          createdAt
           slug
         }
       }
@@ -199,6 +239,58 @@ describe('Queries', () => {
     const res = await query({
       query: GET_AUTHORS,
       variables: { limit: 2, page: 2 },
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fetches a page item by id', async () => {
+    const { pagesDataSource, server } = constructTestServer();
+
+    pagesDataSource.get = jest.fn().mockResolvedValue(mockPageResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_PAGE,
+      variables: { id: 'abc123' },
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fetches a page item by slug', async () => {
+    const { pagesDataSource, server } = constructTestServer();
+
+    pagesDataSource.get = jest.fn().mockResolvedValue(mockPageResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_PAGE,
+      variables: { slug: 'abc123' },
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fails to fetch a page when args are missing', async () => {
+    const { pagesDataSource, server } = constructTestServer();
+
+    pagesDataSource.get = jest.fn().mockResolvedValue(mockPageResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_PAGE,
+      variables: {},
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fetches list of pages', async () => {
+    const { pagesDataSource, server } = constructTestServer();
+
+    pagesDataSource.get = jest.fn().mockResolvedValue(mockPagesResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_PAGES,
+      variables: { limit: 2, page: 1 },
     });
     expect(res).toMatchSnapshot();
   });

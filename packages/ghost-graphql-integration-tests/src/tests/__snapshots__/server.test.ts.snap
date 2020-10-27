@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Queries fails to fetch a page when args are missing 1`] = `
+Object {
+  "data": Object {
+    "page": null,
+  },
+  "errors": Array [
+    [GraphQLError: either an id or slug needs to be provided],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
 exports[`Queries fails to fetch a post when args are missing 1`] = `
 Object {
   "data": Object {
@@ -25,6 +42,44 @@ Object {
   "errors": Array [
     [GraphQLError: either an id or slug needs to be provided],
   ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches a page item by id 1`] = `
+Object {
+  "data": Object {
+    "page": Object {
+      "createdAt": "2017-07-27T08:31:18.000+00:00",
+      "id": "5979a4d6df093500228e9582",
+      "slug": "about",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches a page item by slug 1`] = `
+Object {
+  "data": Object {
+    "page": Object {
+      "createdAt": "2017-07-27T08:31:18.000+00:00",
+      "id": "5979a4d6df093500228e9582",
+      "slug": "about",
+    },
+  },
+  "errors": undefined,
   "extensions": undefined,
   "http": Object {
     "headers": Headers {
@@ -145,6 +200,45 @@ Object {
       "pageInfo": Object {
         "hasNextPage": true,
         "hasPreviousPage": true,
+      },
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches list of pages 1`] = `
+Object {
+  "data": Object {
+    "pages": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "createdAt": "2017-07-27T08:31:18.000+00:00",
+            "id": "5979a4d6df093500228e9582",
+            "slug": "about",
+          },
+        },
+      ],
+      "meta": Object {
+        "pagination": Object {
+          "limit": 2,
+          "next": null,
+          "page": 1,
+          "pages": 1,
+          "prev": null,
+          "total": 1,
+        },
+      },
+      "pageInfo": Object {
+        "hasNextPage": false,
+        "hasPreviousPage": false,
       },
     },
   },
