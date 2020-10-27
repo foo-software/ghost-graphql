@@ -11,12 +11,40 @@ import {
 import gql from 'graphql-tag';
 import mockPostsResponse from '../mocks/postsResponse';
 
+// best way of mocking until someone can provide a better example
+// https://github.com/apollographql/fullstack-tutorial/issues/90
+class AuthorsDataSourceWithMockedGet extends AuthorsDataSource {
+  get(): any {
+    return {};
+  }
+}
+class PagesDataSourceWithMockedGet extends PagesDataSource {
+  get(): any {
+    return {};
+  }
+}
+class PostsDataSoureWithMockedGet extends PostsDataSource {
+  get(): any {
+    return {};
+  }
+}
+class SettingsDataSourceWithMockedGet extends SettingsDataSource {
+  get(): any {
+    return {};
+  }
+}
+class TagsDataSourceWithMockedGet extends TagsDataSource {
+  get(): any {
+    return {};
+  }
+}
+
 const constructTestServer = () => {
-  const authorsDataSource = new AuthorsDataSource();
-  const pagesDataSource = new PagesDataSource();
-  const postsDataSource = new PostsDataSource();
-  const settingsDataSource = new SettingsDataSource();
-  const tagsDataSource = new TagsDataSource();
+  const authorsDataSource = new AuthorsDataSourceWithMockedGet();
+  const pagesDataSource = new PagesDataSourceWithMockedGet();
+  const postsDataSource = new PostsDataSoureWithMockedGet();
+  const settingsDataSource = new SettingsDataSourceWithMockedGet();
+  const tagsDataSource = new TagsDataSourceWithMockedGet();
 
   const server = new ApolloServer({
     schema: QuerySchema,
@@ -42,7 +70,7 @@ const constructTestServer = () => {
 };
 
 const GET_POSTS = gql`
-  query posts($limit: Number, $page: Number) {
+  query posts($limit: Int, $page: Int) {
     posts(limit: $limit, page: $page) {
       edges {
         node {
