@@ -15,6 +15,8 @@ import mockPageResponse from '../mocks/pageResponse';
 import mockPagesResponse from '../mocks/pagesResponse';
 import mockPostResponse from '../mocks/postResponse';
 import mockPostsResponse from '../mocks/postsResponse';
+import mockTagResponse from '../mocks/tagResponse';
+import mockTagsResponse from '../mocks/tagsResponse';
 
 // best way of mocking until someone can provide a better example
 // https://github.com/apollographql/fullstack-tutorial/issues/90
@@ -190,6 +192,42 @@ const GET_POSTS = gql`
   }
 `;
 
+const GET_TAG = gql`
+  query tag($id: String, $slug: String) {
+    tag(id: $id, slug: $slug) {
+      id
+      description
+    }
+  }
+`;
+
+const GET_TAGS = gql`
+  query tags($limit: Int, $page: Int) {
+    tags(limit: $limit, page: $page) {
+      edges {
+        node {
+          id
+          description
+        }
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      meta {
+        pagination {
+          limit
+          next
+          page
+          pages
+          prev
+          total
+        }
+      }
+    }
+  }
+`;
+
 describe('Queries', () => {
   it('fetches an author item by id', async () => {
     const { authorsDataSource, server } = constructTestServer();
@@ -342,6 +380,58 @@ describe('Queries', () => {
     const { query } = createTestClient(server);
     const res = await query({
       query: GET_POSTS,
+      variables: { limit: 2, page: 2 },
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fetches a tag item by id', async () => {
+    const { tagsDataSource, server } = constructTestServer();
+
+    tagsDataSource.get = jest.fn().mockResolvedValue(mockTagResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_TAG,
+      variables: { id: 'abc123' },
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fetches a tag item by slug', async () => {
+    const { tagsDataSource, server } = constructTestServer();
+
+    tagsDataSource.get = jest.fn().mockResolvedValue(mockTagResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_TAG,
+      variables: { slug: 'abc123' },
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fails to fetch a tag when args are missing', async () => {
+    const { tagsDataSource, server } = constructTestServer();
+
+    tagsDataSource.get = jest.fn().mockResolvedValue(mockTagResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_TAG,
+      variables: {},
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fetches list of tags', async () => {
+    const { tagsDataSource, server } = constructTestServer();
+
+    tagsDataSource.get = jest.fn().mockResolvedValue(mockTagsResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_TAGS,
       variables: { limit: 2, page: 2 },
     });
     expect(res).toMatchSnapshot();

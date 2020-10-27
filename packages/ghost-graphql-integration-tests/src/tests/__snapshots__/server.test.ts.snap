@@ -34,6 +34,23 @@ Object {
 }
 `;
 
+exports[`Queries fails to fetch a tag when args are missing 1`] = `
+Object {
+  "data": Object {
+    "tag": null,
+  },
+  "errors": Array [
+    [GraphQLError: either an id or slug needs to be provided],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
 exports[`Queries fails to fetch an author when args are missing 1`] = `
 Object {
   "data": Object {
@@ -119,6 +136,42 @@ Object {
       "metaDescription": null,
       "sendEmailWhenPublished": false,
       "slug": "welcome",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches a tag item by id 1`] = `
+Object {
+  "data": Object {
+    "tag": Object {
+      "description": null,
+      "id": "59799bbd6ebb2f00243a33db",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches a tag item by slug 1`] = `
+Object {
+  "data": Object {
+    "tag": Object {
+      "description": null,
+      "id": "59799bbd6ebb2f00243a33db",
     },
   },
   "errors": undefined,
@@ -303,6 +356,50 @@ Object {
       "pageInfo": Object {
         "hasNextPage": false,
         "hasPreviousPage": false,
+      },
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches list of tags 1`] = `
+Object {
+  "data": Object {
+    "tags": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "description": null,
+            "id": "59799bbd6ebb2f00243a33db",
+          },
+        },
+        Object {
+          "node": Object {
+            "description": "Some of the greatest words ever spoken.",
+            "id": "5979a779df093500228e958b",
+          },
+        },
+      ],
+      "meta": Object {
+        "pagination": Object {
+          "limit": 2,
+          "next": 3,
+          "page": 2,
+          "pages": 4,
+          "prev": 1,
+          "total": 8,
+        },
+      },
+      "pageInfo": Object {
+        "hasNextPage": true,
+        "hasPreviousPage": true,
       },
     },
   },
