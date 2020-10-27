@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Queries fetches list an author by id 1`] = `
+Object {
+  "data": Object {
+    "author": Object {
+      "id": "5951f5fca366002ebd5dbef7",
+      "profileImage": "//www.gravatar.com/avatar/2bfa103a13c88b5ffd26da6f982f11df?s=250&d=mm&r=x",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
 exports[`Queries fetches list of authors 1`] = `
 Object {
   "data": Object {

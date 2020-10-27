@@ -9,6 +9,7 @@ import {
   TagsDataSource,
 } from '@foo-software/ghost-graphql';
 import gql from 'graphql-tag';
+import mockAuthorResponse from '../mocks/authorResponse';
 import mockAuthorsResponse from '../mocks/authorsResponse';
 import mockPostsResponse from '../mocks/postsResponse';
 
@@ -70,6 +71,15 @@ const constructTestServer = () => {
   };
 };
 
+const GET_AUTHOR = gql`
+  query author($id: String, $slug: String) {
+    author(id: $id, slug: $slug) {
+      id
+      profileImage
+    }
+  }
+`;
+
 const GET_AUTHORS = gql`
   query authors($limit: Int, $page: Int) {
     authors(limit: $limit, page: $page) {
@@ -128,6 +138,19 @@ const GET_POSTS = gql`
 `;
 
 describe('Queries', () => {
+  it('fetches list an author by id', async () => {
+    const { authorsDataSource, server } = constructTestServer();
+
+    authorsDataSource.get = jest.fn().mockResolvedValue(mockAuthorResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_AUTHOR,
+      variables: { id: 'abc123' },
+    });
+    expect(res).toMatchSnapshot();
+  });
+
   it('fetches list of authors', async () => {
     const { authorsDataSource, server } = constructTestServer();
 
