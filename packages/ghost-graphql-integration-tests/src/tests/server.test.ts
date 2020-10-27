@@ -138,7 +138,7 @@ const GET_POSTS = gql`
 `;
 
 describe('Queries', () => {
-  it('fetches list an author by id', async () => {
+  it('fetches an author item by id', async () => {
     const { authorsDataSource, server } = constructTestServer();
 
     authorsDataSource.get = jest.fn().mockResolvedValue(mockAuthorResponse);
@@ -147,6 +147,32 @@ describe('Queries', () => {
     const res = await query({
       query: GET_AUTHOR,
       variables: { id: 'abc123' },
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fetches an author item by slug', async () => {
+    const { authorsDataSource, server } = constructTestServer();
+
+    authorsDataSource.get = jest.fn().mockResolvedValue(mockAuthorResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_AUTHOR,
+      variables: { slug: 'some-slug' },
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fails to fetch an author when args are missing', async () => {
+    const { authorsDataSource, server } = constructTestServer();
+
+    authorsDataSource.get = jest.fn().mockResolvedValue(mockAuthorResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_AUTHOR,
+      variables: {},
     });
     expect(res).toMatchSnapshot();
   });
