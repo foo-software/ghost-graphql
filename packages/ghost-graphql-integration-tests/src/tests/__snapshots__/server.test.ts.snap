@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Queries fails to fetch a post when args are missing 1`] = `
+Object {
+  "data": Object {
+    "post": null,
+  },
+  "errors": Array [
+    [GraphQLError: either an id or slug needs to be provided],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
 exports[`Queries fails to fetch an author when args are missing 1`] = `
 Object {
   "data": Object {
@@ -8,6 +25,48 @@ Object {
   "errors": Array [
     [GraphQLError: either an id or slug needs to be provided],
   ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches a post item by id 1`] = `
+Object {
+  "data": Object {
+    "post": Object {
+      "featureImage": "https://demo.ghost.io/content/images/2019/10/welcome-to-ghost.png",
+      "id": "5b7ada404f87d200b5b1f9c8",
+      "metaDescription": null,
+      "sendEmailWhenPublished": false,
+      "slug": "welcome",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches a post item by slug 1`] = `
+Object {
+  "data": Object {
+    "post": Object {
+      "featureImage": "https://demo.ghost.io/content/images/2019/10/welcome-to-ghost.png",
+      "id": "5b7ada404f87d200b5b1f9c8",
+      "metaDescription": null,
+      "sendEmailWhenPublished": false,
+      "slug": "welcome",
+    },
+  },
+  "errors": undefined,
   "extensions": undefined,
   "http": Object {
     "headers": Headers {

@@ -11,6 +11,7 @@ import {
 import gql from 'graphql-tag';
 import mockAuthorResponse from '../mocks/authorResponse';
 import mockAuthorsResponse from '../mocks/authorsResponse';
+import mockPostResponse from '../mocks/postResponse';
 import mockPostsResponse from '../mocks/postsResponse';
 
 // best way of mocking until someone can provide a better example
@@ -108,6 +109,18 @@ const GET_AUTHORS = gql`
   }
 `;
 
+const GET_POST = gql`
+  query post($id: String, $slug: String) {
+    post(id: $id, slug: $slug) {
+      id
+      featureImage
+      metaDescription
+      sendEmailWhenPublished
+      slug
+    }
+  }
+`;
+
 const GET_POSTS = gql`
   query posts($limit: Int, $page: Int) {
     posts(limit: $limit, page: $page) {
@@ -186,6 +199,45 @@ describe('Queries', () => {
     const res = await query({
       query: GET_AUTHORS,
       variables: { limit: 2, page: 2 },
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fetches a post item by id', async () => {
+    const { postsDataSource, server } = constructTestServer();
+
+    postsDataSource.get = jest.fn().mockResolvedValue(mockPostResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_POST,
+      variables: { id: 'abc123' },
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fetches a post item by slug', async () => {
+    const { postsDataSource, server } = constructTestServer();
+
+    postsDataSource.get = jest.fn().mockResolvedValue(mockPostResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_POST,
+      variables: { slug: 'welcome' },
+    });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fails to fetch a post when args are missing', async () => {
+    const { postsDataSource, server } = constructTestServer();
+
+    postsDataSource.get = jest.fn().mockResolvedValue(mockPostResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_POST,
+      variables: {},
     });
     expect(res).toMatchSnapshot();
   });
