@@ -412,3 +412,21 @@ Object {
   },
 }
 `;
+
+exports[`Queries fetches settings 1`] = `
+Object {
+  "data": Object {
+    "settings": Object {
+      "description": "The professional publishing platform",
+      "title": "Ghost",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;

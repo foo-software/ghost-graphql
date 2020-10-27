@@ -17,6 +17,7 @@ import mockPostResponse from '../mocks/postResponse';
 import mockPostsResponse from '../mocks/postsResponse';
 import mockTagResponse from '../mocks/tagResponse';
 import mockTagsResponse from '../mocks/tagsResponse';
+import mockSettingsResponse from '../mocks/settingsResponse';
 
 // best way of mocking until someone can provide a better example
 // https://github.com/apollographql/fullstack-tutorial/issues/90
@@ -228,6 +229,15 @@ const GET_TAGS = gql`
   }
 `;
 
+const GET_SETTINGS = gql`
+  query settings {
+    settings {
+      title
+      description
+    }
+  }
+`;
+
 describe('Queries', () => {
   it('fetches an author item by id', async () => {
     const { authorsDataSource, server } = constructTestServer();
@@ -434,6 +444,16 @@ describe('Queries', () => {
       query: GET_TAGS,
       variables: { limit: 2, page: 2 },
     });
+    expect(res).toMatchSnapshot();
+  });
+
+  it('fetches settings', async () => {
+    const { settingsDataSource, server } = constructTestServer();
+
+    settingsDataSource.get = jest.fn().mockResolvedValue(mockSettingsResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({ query: GET_SETTINGS });
     expect(res).toMatchSnapshot();
   });
 });
