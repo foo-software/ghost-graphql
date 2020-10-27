@@ -5,8 +5,8 @@ import {
   GraphQLInterfaceType,
 } from 'graphql';
 import createEdgeType from './createEdgeType';
-import Meta from '../types/Meta';
-import PageInfo from '../types/PageInfo';
+import GhostMeta from '../types/GhostMeta';
+import GhostPageInfo from '../types/GhostPageInfo';
 
 // inspired by https://relay.dev/graphql/connections.htm
 // and https://graphql.org/learn/pagination/
@@ -24,7 +24,7 @@ export default ({
       edges: {
         type: new GraphQLList(createEdgeType({ name, nodeType })),
       },
-      meta: { type: Meta },
-      pageInfo: { type: new GraphQLNonNull(PageInfo) },
+      meta: { type: GhostMeta },
+      pageInfo: { type: new GraphQLNonNull(GhostPageInfo) },
     }),
   });
