@@ -1,0 +1,40 @@
+export default {
+  posts: [
+    {
+      excerpt:
+        "Making sure that fluff gets into the owner's eyes poop on couch. Human is washing you why halp oh the horror flee scratch hiss bite sit and stare and sleep on dog bed, force dog to sleep on floor purr, for lay on arms while you're using the keyboard",
+      codeinjection_head: null,
+      og_title: null,
+      reading_time: 1,
+      visibility: 'public',
+      updated_at: '2019-10-29T10:39:49.000+00:00',
+      twitter_title: null,
+      custom_template: null,
+      id: '5b7ada404f87d200b5b1f9c8',
+      published_at: '2018-08-20T15:12:06.000+00:00',
+      url: 'https://demo.ghost.io/welcome/',
+      meta_description: null,
+      html:
+        '<h2 id="a-few-things-you-should-know"><strong>A few things you should know</strong></h2>',
+      title: 'Welcome to Ghost',
+      email_subject: null,
+      send_email_when_published: false,
+      custom_excerpt: "Welcome, it's great to have you here.",
+      twitter_description: null,
+      og_description: null,
+      access: true,
+      featured: false,
+      comment_id: '5b7ada404f87d200b5b1f9c8',
+      slug: 'welcome',
+      uuid: '22af052d-2bc1-4306-96d1-667584c797c7',
+      meta_title: 'Search Friendy Title',
+      og_image: null,
+      feature_image:
+        'https://demo.ghost.io/content/images/2019/10/welcome-to-ghost.png',
+      twitter_image: null,
+      codeinjection_foot: null,
+      canonical_url: null,
+      created_at: '2018-08-20T15:12:00.000+00:00',
+    },
+  ],
+};
