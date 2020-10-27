@@ -1,9 +1,9 @@
-import { PagesConnection as PagesConnectionType } from '../types/Page';
-import DataSourceKeyType from '../types/DataSourceKey';
+import { GhostPagesConnection as GhostPagesConnectionType } from '../types/GhostPage';
+import GhostDataSourceKeyType from '../types/GhostDataSourceKey';
 import createResourceConnectionResolver from '../resolverCreators/createResourceConnectionResolver ';
 
 export default createResourceConnectionResolver({
-  dataSource: DataSourceKeyType.pagesDataSource,
+  dataSource: GhostDataSourceKeyType.pagesDataSource,
   resource: 'pages',
-  type: PagesConnectionType,
+  type: GhostPagesConnectionType,
 });

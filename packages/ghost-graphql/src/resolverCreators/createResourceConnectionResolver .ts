@@ -1,9 +1,9 @@
 import { GraphQLInt, GraphQLList, GraphQLString } from 'graphql';
 import { API_VERSION } from '../constants';
 import BrowseArgumentsInterface from '../interfaces/BrowseArguments';
-import DataSourceKeyType from '../types/DataSourceKey';
-import FormatType from '../types/Format';
+import GhostDataSourceKeyType from '../types/GhostDataSourceKey';
 import getConnection from '../helpers/getConnection';
+import GhostFormatType from '../types/GhostFormat';
 import ResolverContextInterface from '../interfaces/DataSources';
 
 export default ({
@@ -11,7 +11,7 @@ export default ({
   dataSource,
   resource,
 }: {
-  dataSource: DataSourceKeyType;
+  dataSource: GhostDataSourceKeyType;
   type: any;
   resource: string;
 }) => ({
@@ -21,7 +21,7 @@ export default ({
     // https://ghost.org/docs/api/v3/content/#parameters
     fields: { type: new GraphQLList(GraphQLString) },
     filter: { type: new GraphQLList(GraphQLString) },
-    formats: { type: new GraphQLList(FormatType) },
+    formats: { type: new GraphQLList(GhostFormatType) },
     include: { type: new GraphQLList(GraphQLString) },
     limit: { type: GraphQLInt },
     order: { type: GraphQLString },

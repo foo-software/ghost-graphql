@@ -1,9 +1,9 @@
-import TagType from '../types/Tag';
-import DataSourceKeyType from '../types/DataSourceKey';
+import GhostTagType from '../types/GhostTag';
+import GhostDataSourceKeyType from '../types/GhostDataSourceKey';
 import createResourceResolver from '../resolverCreators/createResourceResolver';
 
 export default createResourceResolver({
-  dataSource: DataSourceKeyType.tagsDataSource,
+  dataSource: GhostDataSourceKeyType.tagsDataSource,
   resource: 'tags',
-  type: TagType,
+  type: GhostTagType,
 });

@@ -2,7 +2,7 @@ import { GraphQLString } from 'graphql';
 import { API_VERSION } from '../constants';
 import { UserInputError } from 'apollo-server';
 import camelcaseKeys from 'camelcase-keys';
-import DataSourceKeyType from '../types/DataSourceKey';
+import GhostDataSourceKeyType from '../types/GhostDataSourceKey';
 import ReadArgumentsInterface from '../interfaces/ReadArguments';
 import ResolverContextInterface from '../interfaces/DataSources';
 
@@ -12,7 +12,7 @@ export default ({
   dataSource,
   resource,
 }: {
-  dataSource: DataSourceKeyType;
+  dataSource: GhostDataSourceKeyType;
   isSingular?: boolean;
   type: any;
   resource: string;

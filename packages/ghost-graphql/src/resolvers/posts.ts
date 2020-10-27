@@ -1,9 +1,9 @@
-import { PostsConnection as PostsConnectionType } from '../types/Post';
-import DataSourceKeyType from '../types/DataSourceKey';
+import { GhostPostsConnection as GhostPostsConnectionType } from '../types/GhostPost';
+import GhostDataSourceKeyType from '../types/GhostDataSourceKey';
 import createResourceConnectionResolver from '../resolverCreators/createResourceConnectionResolver ';
 
 export default createResourceConnectionResolver({
-  dataSource: DataSourceKeyType.postsDataSource,
+  dataSource: GhostDataSourceKeyType.postsDataSource,
   resource: 'posts',
-  type: PostsConnectionType,
+  type: GhostPostsConnectionType,
 });

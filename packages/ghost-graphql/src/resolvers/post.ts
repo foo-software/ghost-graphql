@@ -1,9 +1,9 @@
-import PostType from '../types/Post';
-import DataSourceKeyType from '../types/DataSourceKey';
+import GhostPostType from '../types/GhostPost';
+import GhostDataSourceKeyType from '../types/GhostDataSourceKey';
 import createResourceResolver from '../resolverCreators/createResourceResolver';
 
 export default createResourceResolver({
-  dataSource: DataSourceKeyType.postsDataSource,
+  dataSource: GhostDataSourceKeyType.postsDataSource,
   resource: 'posts',
-  type: PostType,
+  type: GhostPostType,
 });

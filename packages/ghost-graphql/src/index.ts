@@ -34,25 +34,25 @@ export { default as createEdgeType } from './typeCreators/createEdgeType';
 
 // types
 export {
-  default as AuthorType,
-  AuthorsConnection as AuthorsConnectionType,
-} from './types/Author';
-export { default as DataSourceKeyType } from './types/DataSourceKey';
-export { default as FormatType } from './types/Format';
-export { default as MetaType } from './types/Meta';
-export { default as NavigationType } from './types/Navigation';
+  default as GhostAuthorType,
+  GhostAuthorsConnection as GhostAuthorsConnectionType,
+} from './types/GhostAuthor';
+export { default as GhostDataSourceKeyType } from './types/GhostDataSourceKey';
+export { default as GhostFormatType } from './types/GhostFormat';
+export { default as GhostMetaType } from './types/GhostMeta';
+export { default as GhostNavigationType } from './types/GhostNavigation';
 export {
-  default as PageType,
-  PagesConnection as PagesConnectionType,
-} from './types/Page';
-export { default as PageInfoType } from './types/PageInfo';
+  default as GhostPageType,
+  GhostPagesConnection as GhostPagesConnectionType,
+} from './types/GhostPage';
+export { default as GhostPageInfoType } from './types/GhostPageInfo';
 export {
-  default as PostType,
-  PostsConnection as PostsConnectionType,
-} from './types/Post';
-export { default as QueryType } from './types/Query';
-export { default as SettingsType } from './types/Settings';
+  default as GhostPostType,
+  GhostPostsConnection as GhostPostsConnectionType,
+} from './types/GhostPost';
+export { default as GhostQueryType } from './types/GhostQuery';
+export { default as GhostSettingsType } from './types/GhostSettings';
 export {
-  default as TagType,
-  TagsConnection as TagsConnectionType,
-} from './types/Tag';
+  default as GhostTagType,
+  GhostTagsConnection as GhostTagsConnectionType,
+} from './types/GhostTag';

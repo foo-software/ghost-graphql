@@ -1,6 +1,6 @@
 import { GraphQLSchema } from 'graphql';
-import QueryType from './types/Query';
+import GhostQueryType from './types/GhostQuery';
 
 export default new GraphQLSchema({
-  query: QueryType,
+  query: GhostQueryType,
 });

@@ -1,9 +1,9 @@
-import { AuthorsConnection as AuthorsConnectionType } from '../types/Author';
-import DataSourceKeyType from '../types/DataSourceKey';
+import { GhostAuthorsConnection as GhostAuthorsConnectionType } from '../types/GhostAuthor';
+import GhostDataSourceKeyType from '../types/GhostDataSourceKey';
 import createResourceConnectionResolver from '../resolverCreators/createResourceConnectionResolver ';
 
 export default createResourceConnectionResolver({
-  dataSource: DataSourceKeyType.authorsDataSource,
+  dataSource: GhostDataSourceKeyType.authorsDataSource,
   resource: 'authors',
-  type: AuthorsConnectionType,
+  type: GhostAuthorsConnectionType,
 });

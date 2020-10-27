@@ -1,9 +1,9 @@
-import AuthorType from '../types/Author';
-import DataSourceKeyType from '../types/DataSourceKey';
+import GhostAuthorType from '../types/GhostAuthor';
+import GhostDataSourceKeyType from '../types/GhostDataSourceKey';
 import createResourceResolver from '../resolverCreators/createResourceResolver';
 
 export default createResourceResolver({
-  dataSource: DataSourceKeyType.authorsDataSource,
+  dataSource: GhostDataSourceKeyType.authorsDataSource,
   resource: 'authors',
-  type: AuthorType,
+  type: GhostAuthorType,
 });
