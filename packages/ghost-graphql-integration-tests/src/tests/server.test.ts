@@ -9,6 +9,7 @@ import {
   TagsDataSource,
 } from '@foo-software/ghost-graphql';
 import gql from 'graphql-tag';
+import mockAuthorsResponse from '../mocks/authorsResponse';
 import mockPostsResponse from '../mocks/postsResponse';
 
 // best way of mocking until someone can provide a better example
@@ -69,6 +70,34 @@ const constructTestServer = () => {
   };
 };
 
+const GET_AUTHORS = gql`
+  query authors($limit: Int, $page: Int) {
+    authors(limit: $limit, page: $page) {
+      edges {
+        node {
+          id
+          profileImage
+          slug
+        }
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+      }
+      meta {
+        pagination {
+          limit
+          next
+          page
+          pages
+          prev
+          total
+        }
+      }
+    }
+  }
+`;
+
 const GET_POSTS = gql`
   query posts($limit: Int, $page: Int) {
     posts(limit: $limit, page: $page) {
@@ -99,6 +128,19 @@ const GET_POSTS = gql`
 `;
 
 describe('Queries', () => {
+  it('fetches list of authors', async () => {
+    const { authorsDataSource, server } = constructTestServer();
+
+    authorsDataSource.get = jest.fn().mockResolvedValue(mockAuthorsResponse);
+
+    const { query } = createTestClient(server);
+    const res = await query({
+      query: GET_AUTHORS,
+      variables: { limit: 2, page: 2 },
+    });
+    expect(res).toMatchSnapshot();
+  });
+
   it('fetches list of posts', async () => {
     const { postsDataSource, server } = constructTestServer();
 

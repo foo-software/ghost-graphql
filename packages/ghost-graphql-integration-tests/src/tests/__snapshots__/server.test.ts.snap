@@ -1,5 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Queries fetches list of authors 1`] = `
+Object {
+  "data": Object {
+    "authors": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "id": "5979a779df093500228e958f",
+            "profileImage": "https://demo.ghost.io/content/images/2018/10/edgar.jpg",
+            "slug": "edgar",
+          },
+        },
+        Object {
+          "node": Object {
+            "id": "5951f5fca366002ebd5dbef7",
+            "profileImage": "//www.gravatar.com/avatar/2bfa103a13c88b5ffd26da6f982f11df?s=250&d=mm&r=x",
+            "slug": "ghost",
+          },
+        },
+      ],
+      "meta": Object {
+        "pagination": Object {
+          "limit": 2,
+          "next": 3,
+          "page": 2,
+          "pages": 6,
+          "prev": 1,
+          "total": 11,
+        },
+      },
+      "pageInfo": Object {
+        "hasNextPage": true,
+        "hasPreviousPage": true,
+      },
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
 exports[`Queries fetches list of posts 1`] = `
 Object {
   "data": Object {
