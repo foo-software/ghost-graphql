@@ -1,33 +1,37 @@
-type Query {
-  """https://ghost.org/docs/api/v3/content/#authors"""
-  author(id: String, slug: String): Author
-
-  """https://ghost.org/docs/api/v3/content/#authors"""
-  authors(fields: [String], filter: [String], formats: [Format], include: [String], limit: Int, order: String, page: Int): AuthorsConnection
-
-  """https://ghost.org/docs/api/v3/content/#pages"""
-  page(id: String, slug: String): Page
-
-  """https://ghost.org/docs/api/v3/content/#pages"""
-  pages(fields: [String], filter: [String], formats: [Format], include: [String], limit: Int, order: String, page: Int): PagesConnection
-
-  """https://ghost.org/docs/api/v3/content/#posts"""
-  post(id: String, slug: String): Post
-
-  """https://ghost.org/docs/api/v3/content/#posts"""
-  posts(fields: [String], filter: [String], formats: [Format], include: [String], limit: Int, order: String, page: Int): PostsConnection
-
-  """https://ghost.org/docs/api/v3/content/#settings"""
-  settings: Settings
-
-  """https://ghost.org/docs/api/v3/content/#tags"""
-  tag(id: String, slug: String): Tag
-
-  """https://ghost.org/docs/api/v3/content/#tags"""
-  tags(fields: [String], filter: [String], formats: [Format], include: [String], limit: Int, order: String, page: Int): TagsConnection
+schema {
+  query: GhostQuery
 }
 
-type Author {
+type GhostQuery {
+  """https://ghost.org/docs/api/v3/content/#authors"""
+  author(id: String, slug: String): GhostAuthor
+
+  """https://ghost.org/docs/api/v3/content/#authors"""
+  authors(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostAuthorsConnection
+
+  """https://ghost.org/docs/api/v3/content/#pages"""
+  page(id: String, slug: String): GhostPage
+
+  """https://ghost.org/docs/api/v3/content/#pages"""
+  pages(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostPagesConnection
+
+  """https://ghost.org/docs/api/v3/content/#posts"""
+  post(id: String, slug: String): GhostPost
+
+  """https://ghost.org/docs/api/v3/content/#posts"""
+  posts(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostPostsConnection
+
+  """https://ghost.org/docs/api/v3/content/#settings"""
+  settings: GhostSettings
+
+  """https://ghost.org/docs/api/v3/content/#tags"""
+  tag(id: String, slug: String): GhostTag
+
+  """https://ghost.org/docs/api/v3/content/#tags"""
+  tags(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostTagsConnection
+}
+
+type GhostAuthor {
   bio: String
   coverImage: String
   facebook: String
@@ -43,23 +47,23 @@ type Author {
   website: String
 }
 
-type AuthorsConnection {
-  edges: [AuthorsEdge]
-  meta: Meta
-  pageInfo: PageInfo!
+type GhostAuthorsConnection {
+  edges: [GhostAuthorsEdge]
+  meta: GhostMeta
+  pageInfo: GhostPageInfo!
 }
 
-type AuthorsEdge {
+type GhostAuthorsEdge {
   cursor: String
-  node: Author
+  node: GhostAuthor
 }
 
-type Meta {
+type GhostMeta {
   """https://ghost.org/docs/api/v3/content/#pagination"""
-  pagination: Pagination
+  pagination: GhostPagination
 }
 
-type Pagination {
+type GhostPagination {
   limit: Int
   next: Int
   page: Int
@@ -68,17 +72,17 @@ type Pagination {
   total: Int
 }
 
-type PageInfo {
+type GhostPageInfo {
   hasNextPage: Boolean!
   hasPreviousPage: Boolean!
 }
 
-enum Format {
+enum GhostFormat {
   html
   plaintext
 }
 
-type Page {
+type GhostPage {
   access: Boolean
   canonicalUrl: String
   codeinjectionFoot: String
@@ -111,18 +115,18 @@ type Page {
   visibility: String
 }
 
-type PagesConnection {
-  edges: [PagesEdge]
-  meta: Meta
-  pageInfo: PageInfo!
+type GhostPagesConnection {
+  edges: [GhostPagesEdge]
+  meta: GhostMeta
+  pageInfo: GhostPageInfo!
 }
 
-type PagesEdge {
+type GhostPagesEdge {
   cursor: String
-  node: Page
+  node: GhostPage
 }
 
-type Post {
+type GhostPost {
   access: Boolean
   canonicalUrl: String
   codeinjectionFoot: String
@@ -155,18 +159,18 @@ type Post {
   visibility: String
 }
 
-type PostsConnection {
-  edges: [PostsEdge]
-  meta: Meta
-  pageInfo: PageInfo!
+type GhostPostsConnection {
+  edges: [GhostPostsEdge]
+  meta: GhostMeta
+  pageInfo: GhostPageInfo!
 }
 
-type PostsEdge {
+type GhostPostsEdge {
   cursor: String
-  node: Post
+  node: GhostPost
 }
 
-type Settings {
+type GhostSettings {
   codeinjectionFoot: String
   codeinjectionHead: String
   coverImage: String
@@ -178,11 +182,11 @@ type Settings {
   membersSupportAddress: String
   metaDescription: String
   metaTitle: String
-  navigation: [Navigation]
+  navigation: [GhostNavigation]
   ogDescription: String
   ogImage: String
   ogTitle: String
-  secondaryNavigation: [Navigation]
+  secondaryNavigation: [GhostNavigation]
   timezone: String
   title: String
   twitter: String
@@ -192,12 +196,12 @@ type Settings {
   url: String
 }
 
-type Navigation {
+type GhostNavigation {
   label: String
   url: String
 }
 
-type Tag {
+type GhostTag {
   accentColor: String
   canonicalUrl: String
   codeinjectionFoot: String
@@ -219,13 +223,13 @@ type Tag {
   visibility: String
 }
 
-type TagsConnection {
-  edges: [TagsEdge]
-  meta: Meta
-  pageInfo: PageInfo!
+type GhostTagsConnection {
+  edges: [GhostTagsEdge]
+  meta: GhostMeta
+  pageInfo: GhostPageInfo!
 }
 
-type TagsEdge {
+type GhostTagsEdge {
   cursor: String
-  node: Tag
+  node: GhostTag
 }
