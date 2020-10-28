@@ -15,12 +15,15 @@
     }
   },
   "scripts": {
-    "lint": "eslint . --ext .ts,.tsx",
+    "lint": "eslint --cache --fix",
     "prettier:all": "prettier --single-quote --write '*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --single-quote --write"
+    ],
+    "*.{ts,tsx}": [
+      "npm run lint"
     ]
   },
   "devDependencies": {
