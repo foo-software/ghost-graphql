@@ -1,5 +1,6 @@
 import { GraphQLNonNull, GraphQLObjectType, GraphQLString } from 'graphql';
 import createConnectionType from '../typeCreators/createConnectionType';
+import fs from 'fs';
 
 const GhostAuthor = new GraphQLObjectType({
   name: 'GhostAuthor',
