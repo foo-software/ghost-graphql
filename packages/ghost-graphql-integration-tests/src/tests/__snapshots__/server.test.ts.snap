@@ -1,5 +1,310 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Queries fails to fetch a page when args are missing 1`] = `
+Object {
+  "data": Object {
+    "page": null,
+  },
+  "errors": Array [
+    [GraphQLError: either an id or slug needs to be provided],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fails to fetch a post when args are missing 1`] = `
+Object {
+  "data": Object {
+    "post": null,
+  },
+  "errors": Array [
+    [GraphQLError: either an id or slug needs to be provided],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fails to fetch a tag when args are missing 1`] = `
+Object {
+  "data": Object {
+    "tag": null,
+  },
+  "errors": Array [
+    [GraphQLError: either an id or slug needs to be provided],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fails to fetch an author when args are missing 1`] = `
+Object {
+  "data": Object {
+    "author": null,
+  },
+  "errors": Array [
+    [GraphQLError: either an id or slug needs to be provided],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches a page item by id 1`] = `
+Object {
+  "data": Object {
+    "page": Object {
+      "createdAt": "2017-07-27T08:31:18.000+00:00",
+      "id": "5979a4d6df093500228e9582",
+      "slug": "about",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches a page item by slug 1`] = `
+Object {
+  "data": Object {
+    "page": Object {
+      "createdAt": "2017-07-27T08:31:18.000+00:00",
+      "id": "5979a4d6df093500228e9582",
+      "slug": "about",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches a post item by id 1`] = `
+Object {
+  "data": Object {
+    "post": Object {
+      "featureImage": "https://demo.ghost.io/content/images/2019/10/welcome-to-ghost.png",
+      "id": "5b7ada404f87d200b5b1f9c8",
+      "metaDescription": null,
+      "sendEmailWhenPublished": false,
+      "slug": "welcome",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches a post item by slug 1`] = `
+Object {
+  "data": Object {
+    "post": Object {
+      "featureImage": "https://demo.ghost.io/content/images/2019/10/welcome-to-ghost.png",
+      "id": "5b7ada404f87d200b5b1f9c8",
+      "metaDescription": null,
+      "sendEmailWhenPublished": false,
+      "slug": "welcome",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches a tag item by id 1`] = `
+Object {
+  "data": Object {
+    "tag": Object {
+      "description": null,
+      "id": "59799bbd6ebb2f00243a33db",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches a tag item by slug 1`] = `
+Object {
+  "data": Object {
+    "tag": Object {
+      "description": null,
+      "id": "59799bbd6ebb2f00243a33db",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches an author item by id 1`] = `
+Object {
+  "data": Object {
+    "author": Object {
+      "id": "5951f5fca366002ebd5dbef7",
+      "profileImage": "//www.gravatar.com/avatar/2bfa103a13c88b5ffd26da6f982f11df?s=250&d=mm&r=x",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches an author item by slug 1`] = `
+Object {
+  "data": Object {
+    "author": Object {
+      "id": "5951f5fca366002ebd5dbef7",
+      "profileImage": "//www.gravatar.com/avatar/2bfa103a13c88b5ffd26da6f982f11df?s=250&d=mm&r=x",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches list of authors 1`] = `
+Object {
+  "data": Object {
+    "authors": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "id": "5979a779df093500228e958f",
+            "profileImage": "https://demo.ghost.io/content/images/2018/10/edgar.jpg",
+            "slug": "edgar",
+          },
+        },
+        Object {
+          "node": Object {
+            "id": "5951f5fca366002ebd5dbef7",
+            "profileImage": "//www.gravatar.com/avatar/2bfa103a13c88b5ffd26da6f982f11df?s=250&d=mm&r=x",
+            "slug": "ghost",
+          },
+        },
+      ],
+      "meta": Object {
+        "pagination": Object {
+          "limit": 2,
+          "next": 3,
+          "page": 2,
+          "pages": 6,
+          "prev": 1,
+          "total": 11,
+        },
+      },
+      "pageInfo": Object {
+        "hasNextPage": true,
+        "hasPreviousPage": true,
+      },
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches list of pages 1`] = `
+Object {
+  "data": Object {
+    "pages": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "createdAt": "2017-07-27T08:31:18.000+00:00",
+            "id": "5979a4d6df093500228e9582",
+            "slug": "about",
+          },
+        },
+      ],
+      "meta": Object {
+        "pagination": Object {
+          "limit": 2,
+          "next": null,
+          "page": 1,
+          "pages": 1,
+          "prev": null,
+          "total": 1,
+        },
+      },
+      "pageInfo": Object {
+        "hasNextPage": false,
+        "hasPreviousPage": false,
+      },
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
 exports[`Queries fetches list of posts 1`] = `
 Object {
   "data": Object {
@@ -52,6 +357,68 @@ Object {
         "hasNextPage": false,
         "hasPreviousPage": false,
       },
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches list of tags 1`] = `
+Object {
+  "data": Object {
+    "tags": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "description": null,
+            "id": "59799bbd6ebb2f00243a33db",
+          },
+        },
+        Object {
+          "node": Object {
+            "description": "Some of the greatest words ever spoken.",
+            "id": "5979a779df093500228e958b",
+          },
+        },
+      ],
+      "meta": Object {
+        "pagination": Object {
+          "limit": 2,
+          "next": 3,
+          "page": 2,
+          "pages": 4,
+          "prev": 1,
+          "total": 8,
+        },
+      },
+      "pageInfo": Object {
+        "hasNextPage": true,
+        "hasPreviousPage": true,
+      },
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches settings 1`] = `
+Object {
+  "data": Object {
+    "settings": Object {
+      "description": "The professional publishing platform",
+      "title": "Ghost",
     },
   },
   "errors": undefined,

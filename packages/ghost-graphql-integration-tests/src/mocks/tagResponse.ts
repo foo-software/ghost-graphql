@@ -1,0 +1,25 @@
+export default {
+  tags: [
+    {
+      accent_color: null,
+      og_image: null,
+      og_title: null,
+      twitter_description: null,
+      feature_image: null,
+      id: '59799bbd6ebb2f00243a33db',
+      canonical_url: null,
+      visibility: 'public',
+      name: 'Getting Started',
+      og_description: null,
+      twitter_image: null,
+      slug: 'getting-started',
+      codeinjection_head: null,
+      meta_description: null,
+      description: null,
+      twitter_title: null,
+      codeinjection_foot: null,
+      meta_title: null,
+      url: 'https://demo.ghost.io/tag/getting-started/',
+    },
+  ],
+};
