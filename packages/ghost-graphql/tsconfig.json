@@ -17,5 +17,7 @@
     "sourceMap": true,
     "strict": true,
     "strictNullChecks": true
-  }
+  },
+  "exclude": ["dist", "node_modules"],
+  "include": ["**/*.ts"]
 }

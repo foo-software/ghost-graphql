@@ -41,7 +41,7 @@ export default {
       'https://demo.ghost.io/content/images/2019/10/publication-cover.png',
     og_description: null,
     url: 'https://demo.ghost.io/',
-    codeinjection_foot: `<script src=\"//rum-static.pingdom.net/pa-5d8850cd3a70310008000482.js\" async></script>`,
+    codeinjection_foot: `<script src="//rum-static.pingdom.net/pa-5d8850cd3a70310008000482.js" async></script>`,
   },
   meta: {},
 };
