@@ -1,6 +1,6 @@
 # `@foo-software/ghost-graphql`
 
-GraphQL data sources, query resolvers, schemas, and types for [Ghost](https://ghost.org/). This project provides the pieces to power an [Apollo Server](https://www.apollographql.com/docs/apollo-server/). [`@foo-software/ghost-graphql-server` package](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql) imports modules from this project to provide an Apollo Server class with pre-defined options. The exports of this package could be used in a custom implentation instead of using `@foo-software/ghost-graphql-server`. Includes types for TypeScript support (this project is written in TypeScript as a matter of fact).
+GraphQL data sources, query resolvers, schemas, and types for [Ghost](https://ghost.org/). This project provides the pieces to power an [Apollo Server](https://www.apollographql.com/docs/apollo-server/). [`@foo-software/ghost-graphql-server` package](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql-server) imports modules from this project to provide an Apollo Server class with pre-defined options. You should use that project for a simple, quick solution if you don't need much customization. The exports of this package could be used in a custom implentation instead of using `@foo-software/ghost-graphql-server`. Includes types for TypeScript support (this project is written in TypeScript as a matter of fact).
 
 ## Table of Contents
 
