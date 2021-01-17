@@ -1,5 +1,6 @@
 import { GraphQLNonNull, GraphQLObjectType, GraphQLString } from 'graphql';
 import createConnectionType from '../typeCreators/createConnectionType';
+import GhostPostsCount from './GhostPostsCount';
 
 const GhostTag = new GraphQLObjectType({
   name: 'GhostTag',
@@ -8,6 +9,7 @@ const GhostTag = new GraphQLObjectType({
     canonicalUrl: { type: GraphQLString },
     codeinjectionFoot: { type: GraphQLString },
     codeinjectionHead: { type: GraphQLString },
+    count: { type: GhostPostsCount },
     description: { type: GraphQLString },
     featureImage: { type: GraphQLString },
     id: { type: new GraphQLNonNull(GraphQLString) },

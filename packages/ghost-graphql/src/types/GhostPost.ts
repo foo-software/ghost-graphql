@@ -1,16 +1,20 @@
 import {
   GraphQLBoolean,
   GraphQLInt,
+  GraphQLList,
   GraphQLNonNull,
   GraphQLObjectType,
   GraphQLString,
 } from 'graphql';
 import createConnectionType from '../typeCreators/createConnectionType';
+import GhostAuthor from './GhostAuthor';
+import GhostTag from './GhostTag';
 
 const GhostPost = new GraphQLObjectType({
   name: 'GhostPost',
   fields: () => ({
     access: { type: GraphQLBoolean },
+    authors: { type: new GraphQLList(GhostAuthor) },
     canonicalUrl: { type: GraphQLString },
     codeinjectionFoot: { type: GraphQLString },
     codeinjectionHead: { type: GraphQLString },
@@ -28,10 +32,13 @@ const GhostPost = new GraphQLObjectType({
     ogImage: { type: GraphQLString },
     ogTitle: { type: GraphQLString },
     page: { type: GraphQLBoolean, defaultValue: false },
+    primaryAuthor: { type: GhostAuthor },
+    primaryTag: { type: GhostTag },
     publishedAt: { type: GraphQLString },
     readingTime: { type: GraphQLInt },
     sendEmailWhenPublished: { type: GraphQLBoolean },
     slug: { type: GraphQLString },
+    tags: { type: new GraphQLList(GhostTag) },
     title: { type: GraphQLString },
     twitterDescription: { type: GraphQLString },
     twitterImage: { type: GraphQLString },

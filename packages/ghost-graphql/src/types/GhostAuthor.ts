@@ -1,11 +1,13 @@
 import { GraphQLNonNull, GraphQLObjectType, GraphQLString } from 'graphql';
 import createConnectionType from '../typeCreators/createConnectionType';
+import GhostPostsCount from './GhostPostsCount';
 
 const GhostAuthor = new GraphQLObjectType({
   name: 'GhostAuthor',
   fields: () => ({
     bio: { type: GraphQLString },
     coverImage: { type: GraphQLString },
+    count: { type: GhostPostsCount },
     facebook: { type: GraphQLString },
     id: { type: new GraphQLNonNull(GraphQLString) },
     location: { type: GraphQLString },
