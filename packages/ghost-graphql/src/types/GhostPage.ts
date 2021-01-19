@@ -25,6 +25,7 @@ const GhostPage = new GraphQLObjectType({
     emailSubject: { type: GraphQLString },
     excerpt: { type: GraphQLString },
     featureImage: { type: GraphQLString },
+    html: { type: GraphQLString },
     id: { type: new GraphQLNonNull(GraphQLString) },
     metaDescription: { type: GraphQLString },
     metaTitle: { type: GraphQLString },
