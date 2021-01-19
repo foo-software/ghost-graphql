@@ -1,8 +1,9 @@
-import { GraphQLString } from 'graphql';
+import { GraphQLList, GraphQLString } from 'graphql';
 import { API_VERSION } from '../constants';
 import { UserInputError } from 'apollo-server';
 import camelcaseKeys from 'camelcase-keys';
 import GhostDataSourceKeyType from '../types/GhostDataSourceKey';
+import GhostFormatType from '../types/GhostFormat';
 import ReadArgumentsInterface from '../interfaces/ReadArguments';
 import ResolverContextInterface from '../interfaces/DataSources';
 
@@ -20,7 +21,11 @@ export default ({
   type,
   description: `https://ghost.org/docs/api/${API_VERSION}/content/#${resource}`,
   args: {
+    fields: { type: new GraphQLList(GraphQLString) },
     id: { type: GraphQLString },
+    filter: { type: new GraphQLList(GraphQLString) },
+    formats: { type: new GraphQLList(GhostFormatType) },
+    include: { type: new GraphQLList(GraphQLString) },
     slug: { type: GraphQLString },
   },
   resolve: async (

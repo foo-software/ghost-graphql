@@ -1,12 +1,9 @@
-export enum FormatType {
-  html = 'html',
-  plaintext = 'plaintext',
-}
+import Format from './Format';
 
 export default interface BrowseArguments {
   fields?: string[];
   filter?: string[];
-  formats?: FormatType[];
+  formats?: Format[];
   include?: string[];
   limit?: number;
   order?: string;
