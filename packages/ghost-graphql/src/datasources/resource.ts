@@ -17,9 +17,10 @@ export default class ResourceDataSource extends RESTDataSource {
     });
   }
 
-  read({ id, slug }: ReadArgumentsInterface) {
+  read({ id, slug, ...args }: ReadArgumentsInterface) {
     return this.get(`${this.baseURL}/${id || `slug/${slug}`}`, {
       key: API_KEY,
+      ...args,
     });
   }
 }
