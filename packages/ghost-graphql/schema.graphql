@@ -4,19 +4,19 @@ schema {
 
 type GhostQuery {
   """https://ghost.org/docs/api/v3/content/#authors"""
-  author(id: String, slug: String): GhostAuthor
+  author(fields: [String], id: String, filter: [String], formats: [GhostFormat], include: [String], slug: String): GhostAuthor
 
   """https://ghost.org/docs/api/v3/content/#authors"""
   authors(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostAuthorsConnection
 
   """https://ghost.org/docs/api/v3/content/#pages"""
-  page(id: String, slug: String): GhostPage
+  page(fields: [String], id: String, filter: [String], formats: [GhostFormat], include: [String], slug: String): GhostPage
 
   """https://ghost.org/docs/api/v3/content/#pages"""
   pages(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostPagesConnection
 
   """https://ghost.org/docs/api/v3/content/#posts"""
-  post(id: String, slug: String): GhostPost
+  post(fields: [String], id: String, filter: [String], formats: [GhostFormat], include: [String], slug: String): GhostPost
 
   """https://ghost.org/docs/api/v3/content/#posts"""
   posts(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostPostsConnection
@@ -25,7 +25,7 @@ type GhostQuery {
   settings: GhostSettings
 
   """https://ghost.org/docs/api/v3/content/#tags"""
-  tag(id: String, slug: String): GhostTag
+  tag(fields: [String], id: String, filter: [String], formats: [GhostFormat], include: [String], slug: String): GhostTag
 
   """https://ghost.org/docs/api/v3/content/#tags"""
   tags(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostTagsConnection
@@ -50,6 +50,11 @@ type GhostAuthor {
 
 type GhostPostsCount {
   posts: Int
+}
+
+enum GhostFormat {
+  html
+  plaintext
 }
 
 type GhostAuthorsConnection {
@@ -80,11 +85,6 @@ type GhostPagination {
 type GhostPageInfo {
   hasNextPage: Boolean!
   hasPreviousPage: Boolean!
-}
-
-enum GhostFormat {
-  html
-  plaintext
 }
 
 type GhostPage {
@@ -171,6 +171,7 @@ type GhostPost {
   emailSubject: String
   excerpt: String
   featureImage: String
+  html: String
   id: String!
   metaDescription: String
   metaTitle: String
@@ -178,6 +179,7 @@ type GhostPost {
   ogImage: String
   ogTitle: String
   page: Boolean
+  plaintext: String
   primaryAuthor: GhostAuthor
   primaryTag: GhostTag
   publishedAt: String
