@@ -3,31 +3,31 @@ schema {
 }
 
 type GhostQuery {
-  """https://ghost.org/docs/api/v3/content/#authors"""
+  """https://ghost.org/docs/content-api/#authors"""
   author(fields: [String], id: String, filter: [String], formats: [GhostFormat], include: [String], slug: String): GhostAuthor
 
-  """https://ghost.org/docs/api/v3/content/#authors"""
+  """https://ghost.org/docs/content-api/#authors"""
   authors(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostAuthorsConnection
 
-  """https://ghost.org/docs/api/v3/content/#pages"""
+  """https://ghost.org/docs/content-api/#pages"""
   page(fields: [String], id: String, filter: [String], formats: [GhostFormat], include: [String], slug: String): GhostPage
 
-  """https://ghost.org/docs/api/v3/content/#pages"""
+  """https://ghost.org/docs/content-api/#pages"""
   pages(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostPagesConnection
 
-  """https://ghost.org/docs/api/v3/content/#posts"""
+  """https://ghost.org/docs/content-api/#posts"""
   post(fields: [String], id: String, filter: [String], formats: [GhostFormat], include: [String], slug: String): GhostPost
 
-  """https://ghost.org/docs/api/v3/content/#posts"""
+  """https://ghost.org/docs/content-api/#posts"""
   posts(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostPostsConnection
 
-  """https://ghost.org/docs/api/v3/content/#settings"""
+  """https://ghost.org/docs/content-api/#settings"""
   settings: GhostSettings
 
-  """https://ghost.org/docs/api/v3/content/#tags"""
+  """https://ghost.org/docs/content-api/#tags"""
   tag(fields: [String], id: String, filter: [String], formats: [GhostFormat], include: [String], slug: String): GhostTag
 
-  """https://ghost.org/docs/api/v3/content/#tags"""
+  """https://ghost.org/docs/content-api/#tags"""
   tags(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostTagsConnection
 }
 
@@ -69,7 +69,7 @@ type GhostAuthorsEdge {
 }
 
 type GhostMeta {
-  """https://ghost.org/docs/api/v3/content/#pagination"""
+  """https://ghost.org/docs/content-api/#pagination"""
   pagination: GhostPagination
 }
 

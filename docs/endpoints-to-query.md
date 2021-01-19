@@ -2,7 +2,7 @@
 
 Below are examples of available endpoints and corresponding queries. These examples may not be up to date and offer complete details, so viewing the [schema](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql/schema.graphql) directly would be recommended.
 
-## [Posts](https://ghost.org/docs/api/v3/content/#posts)
+## [Posts](https://ghost.org/docs/content-api/#posts)
 
 #### Browse Posts
 
@@ -69,7 +69,7 @@ post(slug: "welcome") {
 }
 ```
 
-## [Authors](https://ghost.org/docs/api/v3/content/#authors)
+## [Authors](https://ghost.org/docs/content-api/#authors)
 
 #### Browse Authors
 
@@ -134,7 +134,7 @@ author(slug: "cameron") {
 }
 ```
 
-## [Tags](https://ghost.org/docs/api/v3/content/#tags)
+## [Tags](https://ghost.org/docs/content-api/#tags)
 
 #### Browse Tags
 
@@ -197,7 +197,7 @@ tag(slug: "fables") {
 }
 ```
 
-## [Pages](https://ghost.org/docs/api/v3/content/#pages)
+## [Pages](https://ghost.org/docs/content-api/#pages)
 
 #### Browse Pages
 
@@ -258,7 +258,7 @@ page(slug: "about") {
 }
 ```
 
-## [Settings](https://ghost.org/docs/api/v3/content/#settings)
+## [Settings](https://ghost.org/docs/content-api/#settings)
 
 #### Browse Settings
 

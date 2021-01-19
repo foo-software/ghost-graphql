@@ -18,7 +18,7 @@ export default ({
   type,
   description: `https://ghost.org/docs/api/${API_VERSION}/content/#${resource}`,
   args: {
-    // https://ghost.org/docs/api/v3/content/#parameters
+    // https://ghost.org/docs/content-api/#parameters
     fields: { type: new GraphQLList(GraphQLString) },
     filter: { type: new GraphQLList(GraphQLString) },
     formats: { type: new GraphQLList(GhostFormatType) },
