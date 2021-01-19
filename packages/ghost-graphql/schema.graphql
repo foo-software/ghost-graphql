@@ -34,6 +34,7 @@ type GhostQuery {
 type GhostAuthor {
   bio: String
   coverImage: String
+  count: GhostPostsCount
   facebook: String
   id: String!
   location: String
@@ -45,6 +46,10 @@ type GhostAuthor {
   twitter: String
   url: String
   website: String
+}
+
+type GhostPostsCount {
+  posts: Int
 }
 
 type GhostAuthorsConnection {
@@ -84,6 +89,7 @@ enum GhostFormat {
 
 type GhostPage {
   access: Boolean
+  authors: [GhostAuthor]
   canonicalUrl: String
   codeinjectionFoot: String
   codeinjectionHead: String
@@ -101,10 +107,13 @@ type GhostPage {
   ogImage: String
   ogTitle: String
   page: Boolean
+  primaryAuthor: GhostAuthor
+  primaryTag: GhostTag
   publishedAt: String
   readingTime: Int
   sendEmailWhenPublished: Boolean
   slug: String
+  tags: [GhostTag]
   title: String
   twitterDescription: String
   twitterImage: String
@@ -112,6 +121,29 @@ type GhostPage {
   updatedAt: String
   url: String
   uuid: String
+  visibility: String
+}
+
+type GhostTag {
+  accentColor: String
+  canonicalUrl: String
+  codeinjectionFoot: String
+  codeinjectionHead: String
+  count: GhostPostsCount
+  description: String
+  featureImage: String
+  id: String!
+  metaDescription: String
+  metaTitle: String
+  name: String
+  ogDescription: String
+  ogImage: String
+  ogTitle: String
+  slug: String
+  twitterDescription: String
+  twitterImage: String
+  twitterTitle: String
+  url: String
   visibility: String
 }
 
@@ -128,6 +160,7 @@ type GhostPagesEdge {
 
 type GhostPost {
   access: Boolean
+  authors: [GhostAuthor]
   canonicalUrl: String
   codeinjectionFoot: String
   codeinjectionHead: String
@@ -145,10 +178,13 @@ type GhostPost {
   ogImage: String
   ogTitle: String
   page: Boolean
+  primaryAuthor: GhostAuthor
+  primaryTag: GhostTag
   publishedAt: String
   readingTime: Int
   sendEmailWhenPublished: Boolean
   slug: String
+  tags: [GhostTag]
   title: String
   twitterDescription: String
   twitterImage: String
@@ -199,28 +235,6 @@ type GhostSettings {
 type GhostNavigation {
   label: String
   url: String
-}
-
-type GhostTag {
-  accentColor: String
-  canonicalUrl: String
-  codeinjectionFoot: String
-  codeinjectionHead: String
-  description: String
-  featureImage: String
-  id: String!
-  metaDescription: String
-  metaTitle: String
-  name: String
-  ogDescription: String
-  ogImage: String
-  ogTitle: String
-  slug: String
-  twitterDescription: String
-  twitterImage: String
-  twitterTitle: String
-  url: String
-  visibility: String
 }
 
 type GhostTagsConnection {

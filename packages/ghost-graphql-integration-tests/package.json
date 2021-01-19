@@ -1,6 +1,6 @@
 {
   "name": "@foo-software/ghost-graphql-integration-tests",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
   "description": "Integration tests for Ghost GraphQL server",
   "private": true,
@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@foo-software/ghost-graphql": "^2.0.7",
+    "@foo-software/ghost-graphql": "^2.0.8",
     "@types/jest": "^26.0.10",
     "@types/node": "^14.0.27",
     "apollo-server": "^2.18.2",
