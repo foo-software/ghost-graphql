@@ -12,7 +12,7 @@ export { default as TagsDataSource } from './datasources/tags';
 
 // resolver creators
 export { default as createResourceResolver } from './resolverCreators/createResourceResolver';
-export { default as createResourceConnectionResolver } from './resolverCreators/createResourceConnectionResolver ';
+export { default as createResourceConnectionResolver } from './resolverCreators/createResourceConnectionResolver';
 
 // resolvers
 export { default as authorResolver } from './resolvers/author';
