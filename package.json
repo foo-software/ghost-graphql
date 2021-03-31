@@ -15,7 +15,7 @@
     }
   },
   "scripts": {
-    "lint": "eslint --cache --fix",
+    "lint": "eslint ./packages/**/src --ext .ts,.tsx --cache --fix",
     "prettier:all": "prettier --single-quote --write '*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "lint-staged": {
