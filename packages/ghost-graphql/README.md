@@ -5,6 +5,7 @@ GraphQL data sources, query resolvers, schemas, and types for [Ghost](https://gh
 ## Table of Contents
 
 - [Getting Started](#getting-started)
+- [TypeScript Dependencies](#typescript-dependencies)
 - [Ghost Content API](#ghost-content-api)
   - [Pagination and Filtering](#pagination-and-filtering)
 - [Custom Implementation Example](#custom-implementation-example)
@@ -18,6 +19,10 @@ Below are steps to get started with a custom implementation. If you're looking t
 - Determine the [API URL per the docs](https://ghost.org/docs/content-api/#url). You'll need to set this value as [`GHOST_URL` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
 - Create and retrieve your [API key per the docs](https://ghost.org/docs/content-api/#key). You'll need to set this value as [`GHOST_API_KEY` environment variable](https://github.com/foo-software/ghost-graphql/tree/master/packages/ghost-graphql#environment-variables).
 - Use the [custom implementation example](#custom-implementation-example) as a guide and / or simply peek around the code starting with the [exports](src/index.ts). You can import resolvers, data sources, etc.
+
+## TypeScript Dependencies
+
+We use `tsc` to generate types and you may need to match our TypeScript version if you have build errors. Check our [`package.json`](./package.json) to find our TypeScript version.
 
 ## Ghost Content API
 
