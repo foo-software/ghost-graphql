@@ -15,12 +15,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '10.x'
+          node-version: '14.x'
           scope: '@foo-software'
       - name: Install
         run: |
-          npm install lerna -g
-          lerna bootstrap --hoist
+          npm run lerna -- bootstrap --hoist
       - name: Generate Schema
         run: |
           node packages/ghost-graphql-ci-tools/dist/bin/config-git.js

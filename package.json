@@ -15,6 +15,7 @@
     }
   },
   "scripts": {
+    "lerna": "lerna",
     "lint": "eslint ./packages/**/src --ext .ts,.tsx --cache --fix",
     "prettier:all": "prettier --single-quote --write '*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
@@ -33,7 +34,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-jest": "^23.20.0",
     "husky": "^4.2.5",
-    "lerna": "^3.18.2",
+    "lerna": "^4.0.0",
     "lint-staged": "^10.4.2",
     "prettier": "^2.0.5"
   }

@@ -8,6 +8,7 @@ GraphQL data sources, query resolvers, schemas, and types for [Ghost](https://gh
 - [TypeScript Dependencies](#typescript-dependencies)
 - [Ghost Content API](#ghost-content-api)
   - [Pagination and Filtering](#pagination-and-filtering)
+  - [Filter Expressions](#filter-expressions)
 - [Custom Implementation Example](#custom-implementation-example)
 - [Environment Variables](#environment-variables)
 - [Schema](#schema)
@@ -33,6 +34,20 @@ All queries fetch from [Ghost's Content API](https://ghost.org/docs/content-api)
 Resolvers with pagination and filter arguments can be found by inspecting the schema. Arguments mirror the parameters as [documented](https://ghost.org/docs/content-api/#parameters).
 
 Resources with pagination respond with a list of [edges](https://graphql.org/learn/pagination/#pagination-and-edges) **loosely** based on the [GraphQL connection spec provided by Relay](https://relay.dev/graphql/connections.htm). Pagination does not support cursors for the time being due to limitations from Ghost's Content API.
+
+#### Filter Expressions
+
+Filtering has evolved a bit in this project. We initially provided a `filter` argument which is an array of string type (`[String]`), however this led to unintuitive behavior as described in [issue #8](https://github.com/foo-software/ghost-graphql/issues/8). Typing it in this way was naive in that it adds an `or` operator with multiple filters like `filter: ["feature:true", "tag:some-tag"]`.
+
+In order to leverage the full power of Ghost's [filter expression syntax](https://ghost.org/docs/content-api/#filtering), it's best to now use the `filterExpression` argument (`String` type) instead of the original `filter` argument.
+
+For example, if I wanted to fetch all feature posts **and** exclude tags with `some-tag`, I would use `filterExpression` like so:
+
+```
+filterExpression: "feature:true+tag:-some-tag"
+```
+
+Note the use of the and operator (`+`) and negation operator (`-`).
 
 ## Custom Implementation Example
 

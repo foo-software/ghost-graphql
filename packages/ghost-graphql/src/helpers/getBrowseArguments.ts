@@ -1,8 +1,13 @@
 import BrowseArguments from '../interfaces/BrowseArguments';
 
 export default (browseArguments: BrowseArguments) => {
+  const { filterExpression, ...partialBrowseArguments } = browseArguments;
+
   return {
-    ...browseArguments,
+    ...partialBrowseArguments,
+    ...(filterExpression && {
+      filter: filterExpression,
+    }),
     limit: browseArguments.limit || 'all',
   };
 };

@@ -10,8 +10,9 @@ const run = async () => {
     console.log('✅ schema committed');
   } catch (error) {
     if (
-      error.message.includes('No staged files found') ||
-      error.message.includes('nothing to commit')
+      error instanceof Error &&
+      (error.message.includes('No staged files found') ||
+        error.message.includes('nothing to commit'))
     ) {
       process.exit();
     }

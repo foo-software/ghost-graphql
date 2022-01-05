@@ -21,6 +21,7 @@ export default ({
     // https://ghost.org/docs/content-api/#parameters
     fields: { type: new GraphQLList(GraphQLString) },
     filter: { type: new GraphQLList(GraphQLString) },
+    filterExpression: { type: GraphQLString },
     formats: { type: new GraphQLList(GhostFormatType) },
     include: { type: new GraphQLList(GraphQLString) },
     limit: { type: GraphQLInt },
