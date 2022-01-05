@@ -7,19 +7,19 @@ type GhostQuery {
   author(fields: [String], id: String, filter: [String], formats: [GhostFormat], include: [String], slug: String): GhostAuthor
 
   """https://ghost.org/docs/api/v3/content/#authors"""
-  authors(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostAuthorsConnection
+  authors(fields: [String], filter: [String], filterExpression: String, formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostAuthorsConnection
 
   """https://ghost.org/docs/api/v3/content/#pages"""
   page(fields: [String], id: String, filter: [String], formats: [GhostFormat], include: [String], slug: String): GhostPage
 
   """https://ghost.org/docs/api/v3/content/#pages"""
-  pages(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostPagesConnection
+  pages(fields: [String], filter: [String], filterExpression: String, formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostPagesConnection
 
   """https://ghost.org/docs/api/v3/content/#posts"""
   post(fields: [String], id: String, filter: [String], formats: [GhostFormat], include: [String], slug: String): GhostPost
 
   """https://ghost.org/docs/api/v3/content/#posts"""
-  posts(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostPostsConnection
+  posts(fields: [String], filter: [String], filterExpression: String, formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostPostsConnection
 
   """https://ghost.org/docs/api/v3/content/#settings"""
   settings: GhostSettings
@@ -28,7 +28,7 @@ type GhostQuery {
   tag(fields: [String], id: String, filter: [String], formats: [GhostFormat], include: [String], slug: String): GhostTag
 
   """https://ghost.org/docs/api/v3/content/#tags"""
-  tags(fields: [String], filter: [String], formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostTagsConnection
+  tags(fields: [String], filter: [String], filterExpression: String, formats: [GhostFormat], include: [String], limit: Int, order: String, page: Int): GhostTagsConnection
 }
 
 type GhostAuthor {
