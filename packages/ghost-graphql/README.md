@@ -44,7 +44,7 @@ In order to leverage the full power of Ghost's [filter expression syntax](https:
 For example, if I wanted to fetch all feature posts **and** exclude tags with `some-tag`, I would use `filterExpression` like so:
 
 ```
-filterExpression: "feature:true+tag:-some-tag"
+filterExpression: "featured:true+tag:-some-tag"
 ```
 
 Note the use of the and operator (`+`) and negation operator (`-`).
