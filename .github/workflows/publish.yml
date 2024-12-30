@@ -19,7 +19,7 @@ jobs:
           scope: '@foo-software'
       - name: Install
         run: |
-          npm run lerna -- bootstrap --hoist
+          npm install
       - name: Generate Schema
         run: |
           node packages/ghost-graphql-ci-tools/dist/bin/config-git.js
