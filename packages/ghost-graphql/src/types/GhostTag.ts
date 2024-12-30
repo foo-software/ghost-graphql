@@ -12,6 +12,7 @@ const GhostTag = new GraphQLObjectType({
     count: { type: GhostPostsCount },
     description: { type: GraphQLString },
     featureImage: { type: GraphQLString },
+    featureImageAlt: { type: GraphQLString },
     id: { type: new GraphQLNonNull(GraphQLString) },
     metaDescription: { type: GraphQLString },
     metaTitle: { type: GraphQLString },
