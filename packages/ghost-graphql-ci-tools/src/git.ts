@@ -24,5 +24,5 @@ export const commit = (message: string) => {
 };
 
 export const push = () => {
-  shell('git push');
+  shell('git push --follow-tags');
 };

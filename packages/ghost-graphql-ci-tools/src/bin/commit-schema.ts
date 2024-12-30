@@ -5,7 +5,7 @@ const run = async () => {
   try {
     console.log('⌛ git commit...');
     git.add();
-    git.commit('chore: generate schema');
+    git.commit('chore: generate schema (skip ci)');
     git.push();
     console.log('✅ schema committed');
   } catch (error) {

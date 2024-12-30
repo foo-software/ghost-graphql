@@ -23,7 +23,7 @@
     "build": "tsc",
     "clean": "rimraf dist",
     "generate-schema": "node dist/bin/generate-schema.js",
-    "prepare": "npm run clean && npm run build"
+    "prepublish": "npm run clean && npm run build"
   },
   "peerDependencies": {
     "apollo-server": "2.x",
@@ -44,7 +44,7 @@
     "graphql": "^15.3.0",
     "mkdirp": "^1.0.4",
     "rimraf": "^3.0.2",
-    "typescript": "^4.0.3"
+    "typescript": "^5.7.2"
   },
   "gitHead": "97185e472875795719a0fb2a46eaad74ede71afd"
 }

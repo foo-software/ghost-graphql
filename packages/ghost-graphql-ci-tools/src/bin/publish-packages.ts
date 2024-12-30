@@ -1,10 +1,17 @@
 #!/usr/bin/env node
-import * as lerna from '../lerna';
+import * as git from '../git';
+import * as npm from '../npm';
 
 const run = async () => {
   try {
-    console.log('⌛ lerna publish...');
-    lerna.publish();
+    console.log('⌛ version, git commit and push...');
+
+    // @TODO - dynamically pull from somewhere (maybe utilize conventional commits)
+    npm.version({ versionType: 'minor' });
+
+    git.push();
+    console.log('✅ version, git commit and push completed');
+    npm.publish();
     console.log('✅ packages published');
   } catch (error) {
     console.error(error);

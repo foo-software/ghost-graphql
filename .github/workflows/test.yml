@@ -18,8 +18,7 @@ jobs:
           scope: '@foo-software'
       - name: Install
         run: |
-          npm install lerna -g
-          lerna bootstrap --hoist
+          npm install
       - name: Integration Tests
         run: |
           cd packages/ghost-graphql-integration-tests

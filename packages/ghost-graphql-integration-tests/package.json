@@ -7,10 +7,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "build": "echo build",
     "test": "jest"
   },
   "devDependencies": {
-    "@foo-software/ghost-graphql": "^2.0.17",
+    "@foo-software/ghost-graphql": "*",
     "@types/jest": "^26.0.10",
     "@types/node": "^14.0.27",
     "apollo-server": "^2.18.2",
@@ -18,6 +19,6 @@
     "graphql-tag": "^2.11.0",
     "jest": "^26.4.0",
     "ts-jest": "^26.2.0",
-    "typescript": "^3.9.7"
+    "typescript": "^5.7.2"
   }
 }
