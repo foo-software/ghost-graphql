@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "engines": {
+    "node": ">=16.20.2 <17"
+  },
   "workspaces": [
     "./packages/*"
   ],
