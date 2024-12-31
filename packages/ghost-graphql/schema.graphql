@@ -101,6 +101,7 @@ type GhostPage {
   excerpt: String
   featureImage: String
   featureImageAlt: String
+  featureImageCaption: String
   html: String
   id: String!
   metaDescription: String
@@ -135,6 +136,7 @@ type GhostTag {
   description: String
   featureImage: String
   featureImageAlt: String
+  featureImageCaption: String
   id: String!
   metaDescription: String
   metaTitle: String
@@ -175,6 +177,7 @@ type GhostPost {
   excerpt: String
   featureImage: String
   featureImageAlt: String
+  featureImageCaption: String
   html: String
   id: String!
   metaDescription: String
