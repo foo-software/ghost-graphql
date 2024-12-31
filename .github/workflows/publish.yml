@@ -20,6 +20,7 @@ jobs:
       - name: Install
         run: |
           npm install --workspaces --include-workspace-root
+          npm run build --workspaces --if-present
       - name: Generate Schema
         run: |
           node packages/ghost-graphql-ci-tools/dist/bin/config-git.js
