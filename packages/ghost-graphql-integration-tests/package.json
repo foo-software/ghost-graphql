@@ -1,6 +1,6 @@
 {
   "name": "@foo-software/ghost-graphql-integration-tests",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
   "description": "Integration tests for Ghost GraphQL server",
   "private": true,
