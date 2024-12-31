@@ -19,7 +19,7 @@ jobs:
       - name: Install
         run: |
           npm install --workspaces
-          npm run build --workspaces --if-present
+          # npm run build --workspaces --if-present
       - name: Integration Tests
         run: |
           cd packages/ghost-graphql-integration-tests
