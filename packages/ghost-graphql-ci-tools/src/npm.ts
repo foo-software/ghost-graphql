@@ -8,6 +8,6 @@ export const publish = () => {
 
 export const version = ({ versionType }: { versionType: string }) => {
   shell(
-    `npm version ${versionType} --workspaces --include-workspace-root --message 'chore: version %s (skip ci)'`
+    `npm version ${versionType} --workspaces --message 'chore: version %s (skip ci)'`
   );
 };
