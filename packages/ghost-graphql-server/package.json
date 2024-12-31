@@ -25,7 +25,6 @@
     "clean": "rimraf dist",
     "dev": "NODE_ENV=development ts-node-dev --respawn --inspect -- ./src/index.ts | bunyan --color",
     "ghost-graphql-server": "node dist/bin/ghost-graphql-server.js",
-    "postinstall": "echo \"\"",
     "prepublish": "npm run clean && npm run build",
     "start": "npm run build && node dist | bunyan --color"
   },
