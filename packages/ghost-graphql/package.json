@@ -23,7 +23,6 @@
     "build": "tsc",
     "clean": "rimraf dist",
     "generate-schema": "node dist/bin/generate-schema.js",
-    "postinstall": "echo \"\"",
     "prepublish": "npm run clean && npm run build"
   },
   "peerDependencies": {

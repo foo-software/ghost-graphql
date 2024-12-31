@@ -22,7 +22,6 @@
   },
   "scripts": {
     "lint": "eslint ./packages/**/src --ext .ts,.tsx --cache --fix",
-    "postinstall": "echo \"\"",
     "prettier:all": "prettier --single-quote --write '*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "lint-staged": {
