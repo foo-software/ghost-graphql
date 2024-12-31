@@ -2,8 +2,7 @@ import shell from './shell';
 
 export const publish = () => {
   shell(
-    `npm publish --workspace=@foo-software/ghost-graphql --workspace=@foo-software/ghost-graphql-server ` +
-      `--message 'chore: tag % (skip ci)'`
+    `npm publish --workspace=@foo-software/ghost-graphql --workspace=@foo-software/ghost-graphql-server `
   );
 };
 

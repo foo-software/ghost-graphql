@@ -20,7 +20,7 @@ export const add = () => {
 };
 
 export const commit = (message: string) => {
-  shell(`git commit -am '${message} (skip ci)'`);
+  shell(`git commit -am '${message}'`);
 };
 
 export const push = () => {
