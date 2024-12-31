@@ -9,6 +9,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
+    "postinstall": "echo \"\"",
     "prepublish": "npm run clean && npm run build"
   },
   "dependencies": {
