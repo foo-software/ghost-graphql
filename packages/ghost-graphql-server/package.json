@@ -1,6 +1,6 @@
 {
   "name": "@foo-software/ghost-graphql-server",
-  "version": "2.0.17",
+  "version": "2.0.19",
   "author": "Adam Henson <adamhenson1979@gmail.com> (https://github.com/adamhenson)",
   "description": "An Apollo GraphQL server for Ghost supporting programmatic or CLI usage.",
   "bugs": {
