@@ -19,7 +19,11 @@ jobs:
       - name: Install
         run: |
           npm install --workspaces
-          # npm run build --workspaces --if-present
+          # ensure we build packages synchronously to ensure dependencies are built.
+          # @TODO - see if it's possible to do this better
+          # first build the one that consumed by siblings, then just build all
+          npm run build --workspace="@foo-software/ghost-graphql"
+          npm run build --workspaces --if-present
       - name: Integration Tests
         run: |
           cd packages/ghost-graphql-integration-tests
