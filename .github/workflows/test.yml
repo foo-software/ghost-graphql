@@ -18,7 +18,8 @@ jobs:
           scope: '@foo-software'
       - name: Install
         run: |
-          npm install --workspaces --include-workspace-root
+          npm install --workspaces
+          npm run build --workspaces --if-present
       - name: Integration Tests
         run: |
           cd packages/ghost-graphql-integration-tests
