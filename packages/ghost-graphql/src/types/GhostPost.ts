@@ -26,6 +26,7 @@ const GhostPost = new GraphQLObjectType({
     excerpt: { type: GraphQLString },
     featureImage: { type: GraphQLString },
     featureImageAlt: { type: GraphQLString },
+    featureImageCaption: { type: GraphQLString },
     html: { type: GraphQLString },
     id: { type: new GraphQLNonNull(GraphQLString) },
     metaDescription: { type: GraphQLString },

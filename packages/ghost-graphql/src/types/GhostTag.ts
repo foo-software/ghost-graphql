@@ -13,6 +13,7 @@ const GhostTag = new GraphQLObjectType({
     description: { type: GraphQLString },
     featureImage: { type: GraphQLString },
     featureImageAlt: { type: GraphQLString },
+    featureImageCaption: { type: GraphQLString },
     id: { type: new GraphQLNonNull(GraphQLString) },
     metaDescription: { type: GraphQLString },
     metaTitle: { type: GraphQLString },
