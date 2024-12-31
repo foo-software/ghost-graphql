@@ -7,8 +7,8 @@ const run = async () => {
     console.log('⌛ version, git commit and push...');
 
     // @TODO - dynamically pull from somewhere (maybe utilize conventional commits)
-    npm.version({ versionType: 'patch' });
-
+    npm.version({ versionType: 'major' });
+    git.commit('chore: package.json updates from workspaces publish');
     git.push();
     console.log('✅ version, git commit and push completed');
     npm.publish();
