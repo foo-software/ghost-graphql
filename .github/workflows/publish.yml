@@ -19,7 +19,7 @@ jobs:
           scope: '@foo-software'
       - name: Install
         run: |
-          npm install --workspaces
+          npm install --workspaces --include-workspace-root
       - name: Generate Schema
         run: |
           node packages/ghost-graphql-ci-tools/dist/bin/config-git.js
