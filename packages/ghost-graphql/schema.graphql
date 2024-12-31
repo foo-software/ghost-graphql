@@ -100,6 +100,7 @@ type GhostPage {
   emailSubject: String
   excerpt: String
   featureImage: String
+  featureImageAlt: String
   html: String
   id: String!
   metaDescription: String
@@ -133,6 +134,7 @@ type GhostTag {
   count: GhostPostsCount
   description: String
   featureImage: String
+  featureImageAlt: String
   id: String!
   metaDescription: String
   metaTitle: String
@@ -172,6 +174,7 @@ type GhostPost {
   emailSubject: String
   excerpt: String
   featureImage: String
+  featureImageAlt: String
   html: String
   id: String!
   metaDescription: String
