@@ -1,5 +1,5 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
-import { API_KEY, API_URL } from '../constants';
+import { API_KEY, API_URL, SHOULD_LOG_API_URL } from '../constants';
 import BrowseArgumentsInterface from '../interfaces/BrowseArguments';
 import ReadArgumentsInterface from '../interfaces/ReadArguments';
 import getBrowseArguments from '../helpers/getBrowseArguments';
@@ -8,6 +8,9 @@ export default class ResourceDataSource extends RESTDataSource {
   constructor() {
     super();
     this.baseURL = `${API_URL}`;
+    if (SHOULD_LOG_API_URL) {
+      console.log('API_URL', API_URL);
+    }
   }
 
   browse(browseArguments: BrowseArgumentsInterface) {
